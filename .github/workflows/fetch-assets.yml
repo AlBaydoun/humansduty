@@ -29,10 +29,33 @@ jobs:
               echo "skip existing $path"
             fi
           done
+      - name: Fetch client photo folder (Yandex Disk public link)
+        run: |
+          set -e
+          PUB="https%3A%2F%2Fdisk.yandex.ru%2Fd%2FpbLgzD0PdtXwHQ"
+          HREF=$(curl -fsSL "https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key=$PUB" | jq -r .href)
+          echo "zip href acquired"
+          curl -fsSL --retry 3 -o /tmp/photos.zip "$HREF"
+          mkdir -p /tmp/client srcassets/photos
+          unzip -o -q /tmp/photos.zip -d /tmp/client || true
+          sudo apt-get install -y -q imagemagick >/dev/null 2>&1 || true
+          i=0
+          find /tmp/client -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.bmp' \) | sort | while read -r f; do
+            i=$((i+1))
+            base=$(basename "$f")
+            name=$(echo "${base%.*}" | tr -cs 'a-zA-Z0-9_-' '-' | tr 'A-Z' 'a-z' | cut -c1-48)
+            [ -z "$name" ] && name="photo"
+            out="srcassets/photos/$(printf '%03d' $i)-$name.jpg"
+            convert "$f" -auto-orient -resize '1800x1800>' -quality 84 "$out" || cp "$f" "$out" || true
+          done
+          # svg / other brand files copied as-is
+          find /tmp/client -type f \( -iname '*.svg' -o -iname '*.ai' -o -iname '*.pdf' \) -exec cp {} srcassets/photos/ \; || true
+          ls srcassets/photos | head -40
+          du -sh srcassets/photos
       - name: Commit
         run: |
           git config user.name "asset-relay"
           git config user.email "actions@github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "assets: fetch generated media"
+          git diff --cached --quiet || git commit -m "assets: fetch generated media + client photos"
           git push
