@@ -3,7 +3,7 @@
     "version": 1,
     "site_name": {
       "en": "Human's Duty",
-      "ar": "واجب الإنسان"
+      "ar": "واجب البشر"
     },
     "tagline": {
       "en": "Together, we make a difference.",
@@ -66,7 +66,7 @@
     "paragraphs": [
       {
         "en": "Human's Duty is a Lebanese NGO and non-profit, founded on 27 September 2011 under Interior Ministry notification no. 137. Its roots reach back to the Lebanese Sports Club of Bint Jbeil, established in 2004.",
-        "ar": "«واجب الإنسان» جمعية لبنانية غير حكومية لا تبغى الربح، تأسست في 27 أيلول 2011 بموجب علم وخبر رقم 137 صادر عن وزارة الداخلية اللبنانية. تمتد جذورها إلى النادي الرياضي اللبناني في بنت جبيل، الذي تأسس عام 2004."
+        "ar": "«واجب البشر» جمعية لبنانية غير حكومية لا تبغى الربح، تأسست في 27 أيلول 2011 بموجب علم وخبر رقم 137 صادر عن وزارة الداخلية اللبنانية. تمتد جذورها إلى النادي الرياضي اللبناني في بنت جبيل، الذي تأسس عام 2004."
       },
       {
         "en": "In 2006 we opened a center teaching computers and English. Over two consecutive years, with OTI support funded by USAID, nearly one hundred young women and men trained in youth, environmental, health, social and sports awareness. Freed from dependency and sectarian intolerance, they became the conscious, independent generation of the Bint Jbeil region.",
@@ -74,7 +74,7 @@
       },
       {
         "en": "From those seeds grew the Lebanese Vocational School of Life, and in 2011, Human's Duty. Our work continues across Lebanon: Bint Jbeil, Beirut, Mount Lebanon, Koura and beyond.",
-        "ar": "من تلك البذور نشأت المدرسة اللبنانية المهنية للحياة، ثم جمعية «واجب الإنسان» عام 2011. ويستمر عملنا في مختلف المناطق اللبنانية: بنت جبيل وبيروت وجبل لبنان والكورة وسواها."
+        "ar": "من تلك البذور نشأت المدرسة اللبنانية المهنية للحياة، ثم جمعية «واجب البشر» عام 2011. ويستمر عملنا في مختلف المناطق اللبنانية: بنت جبيل وبيروت وجبل لبنان والكورة وسواها."
       }
     ],
     "photos": [
@@ -154,11 +154,11 @@
       "year": "2011",
       "title": {
         "en": "Human's Duty",
-        "ar": "واجب الإنسان"
+        "ar": "واجب البشر"
       },
       "body": {
         "en": "Human's Duty is founded on 27 September under notification no. 137.",
-        "ar": "تأسيس جمعية «واجب الإنسان» في 27 أيلول بموجب علم وخبر رقم 137."
+        "ar": "تأسيس جمعية «واجب البشر» في 27 أيلول بموجب علم وخبر رقم 137."
       },
       "image": "assets/gallery/celebration.webp"
     },
