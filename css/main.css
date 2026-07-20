@@ -132,7 +132,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero{position:relative;z-index:1}
 .hero-pin{position:relative;height:100dvh;overflow:hidden}
 .film,.film-fallback{position:absolute;inset:0;width:100%;height:100%}
-.film{object-fit:cover}
+.film{object-fit:cover;z-index:2}
+.film-fallback{z-index:1}
 .film-fallback{background:url("../assets/img/hero-still.webp") center/cover no-repeat}
 .hero-vignette{position:absolute;inset:0;background:
   radial-gradient(120% 90% at 50% 42%,transparent 40%,rgba(11,9,8,.72) 100%),

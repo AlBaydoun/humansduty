@@ -408,6 +408,8 @@ async function initFilm() {
     film.load = load;
     for (let i = 0; i < film.count; i += 6) load(i);
     load(0, "high"); load(film.count - 1);
+    const fb = $("#filmFallback");
+    if (fb) fb.style.display = "none";
     /* slow background sweep: fill and heal the whole strip */
     let sweep = 0;
     const sw = setInterval(() => {
