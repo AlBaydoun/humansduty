@@ -87,8 +87,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   padding:.9rem var(--pad);
   transition:background .45s var(--ease),backdrop-filter .45s,box-shadow .45s, padding .45s;
 }
-.nav.solid{background:color-mix(in oklab,var(--ash) 82%,transparent);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(246,239,230,.08);padding-block:.55rem}
-.nav.lightzone.solid{background:color-mix(in oklab,var(--dawn) 86%,transparent);box-shadow:0 1px 0 rgba(24,19,16,.08)}
+.nav.solid{background:color-mix(in oklab,var(--ash) 93%,transparent);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(246,239,230,.08);padding-block:.55rem}
+.nav.lightzone.solid{background:color-mix(in oklab,var(--dawn) 94%,transparent);box-shadow:0 1px 0 rgba(24,19,16,.08)}
 .nav.lightzone{color:var(--ink)}
 .brand{display:flex;align-items:center;gap:.65rem}
 .brand-mark{width:34px;height:34px;background:url("../assets/img/logo.svg") center/contain no-repeat;filter:drop-shadow(0 0 6px rgba(42,161,142,.35))}

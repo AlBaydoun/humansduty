@@ -331,7 +331,7 @@ function cursor() {
 /* ═══ MAGNETIC ═══ */
 function magnetic() {
   if (TOUCH || RM) return;
-  $$(".donate-nav,.cta-story,.don-cta,.lang").forEach(el => {
+  $$(".donate-nav,.cta-story,.don-cta").forEach(el => {
     let raf;
     el.addEventListener("pointermove", e => {
       const r = el.getBoundingClientRect();
