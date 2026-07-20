@@ -390,23 +390,24 @@ async function initFilm() {
     film.ext = manifest.ext || ".webp"; film.pad = manifest.pad || 4;
     film.frames = new Array(film.count).fill(null);
     const src = i => film.base + String(i + 1).padStart(film.pad, "0") + film.ext;
-    const spawn = (i, retry) => {
+    const spawn = (i, retry, pri) => {
       const im = new Image();
       im._r = retry;
+      try { im.fetchPriority = pri || "low"; } catch (e) {}
       im.onload = () => requestAnimationFrame(() => film.draw && film.draw(film.lastP || 0));
       im.src = src(i) + (retry ? "?r=" + retry : "");
       film.frames[i] = im;
     };
-    const load = i => {
+    const load = (i, pri) => {
       if (i < 0 || i >= film.count) return;
       const ex = film.frames[i];
-      if (!ex) { spawn(i, 0); return; }
+      if (!ex) { spawn(i, 0, pri); return; }
       /* retry frames that failed (deploy races, flaky network) */
-      if (ex.complete && ex.naturalWidth === 0 && (ex._r || 0) < 3) spawn(i, (ex._r || 0) + 1);
+      if (ex.complete && ex.naturalWidth === 0 && (ex._r || 0) < 3) spawn(i, (ex._r || 0) + 1, pri);
     };
     film.load = load;
     for (let i = 0; i < film.count; i += 6) load(i);
-    load(0); load(film.count - 1);
+    load(0, "high"); load(film.count - 1);
     /* slow background sweep: fill and heal the whole strip */
     let sweep = 0;
     const sw = setInterval(() => {
@@ -433,7 +434,7 @@ async function initFilm() {
     ctx.clearRect(0, 0, cv.width, cv.height);
     if (film.mode === "frames") {
       let i = Math.round(p * (film.count - 1));
-      film.load(i); film.load(i + 1); film.load(i + 2); film.load(i - 1);
+      for (let d = -2; d <= 4; d++) film.load(i + d, "high");
       let im = null;
       for (let k = 0; k < film.count; k++) {
         const a = film.frames[i - k], b = film.frames[i + k];
