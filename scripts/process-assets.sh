@@ -17,8 +17,8 @@ fi
 
 if [ -f srcassets/hero-film.mp4 ]; then
   rm -f assets/video/frames/*.webp assets/video/frames-m/*.webp
-  ffmpeg -y -loglevel error -i srcassets/hero-film.mp4 -vf "fps=19,scale=1600:-2" -quality 72 assets/video/frames/f_%04d.webp
-  ffmpeg -y -loglevel error -i srcassets/hero-film.mp4 -vf "fps=10,scale=960:-2" -quality 68 assets/video/frames-m/f_%04d.webp
+  ffmpeg -y -loglevel error -i srcassets/hero-film.mp4 -vf "fps=19,scale=1600:-2" -c:v libwebp -quality 72 -f image2 assets/video/frames/f_%04d.webp
+  ffmpeg -y -loglevel error -i srcassets/hero-film.mp4 -vf "fps=10,scale=960:-2" -c:v libwebp -quality 68 -f image2 assets/video/frames-m/f_%04d.webp
   C=$(ls assets/video/frames/f_*.webp | wc -l | tr -d ' ')
   M=$(ls assets/video/frames-m/f_*.webp | wc -l | tr -d ' ')
   cat > assets/video/frames.json <<JSON
