@@ -379,7 +379,7 @@ const film = { mode: "none", frames: [], count: 0, img: null, ready: 0 };
 async function initFilm() {
   const cv = $("#film"), ctx = cv.getContext("2d");
   const fit = () => { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; };
-  fit(); addEventListener("resize", () => { fit(); draw(lastP); });
+  fit(); addEventListener("resize", () => { fit(); draw(film.lastP || 0); });
   let manifest = null;
   try { manifest = await (await fetch("assets/video/frames.json", { cache: "force-cache" })).json(); } catch (e) {}
   if (manifest && manifest.count) {
@@ -389,22 +389,38 @@ async function initFilm() {
     film.base = mob ? manifest.mobile.base : manifest.base;
     film.ext = manifest.ext || ".webp"; film.pad = manifest.pad || 4;
     film.frames = new Array(film.count).fill(null);
-    const load = i => {
-      if (i < 0 || i >= film.count || film.frames[i]) return;
+    const src = i => film.base + String(i + 1).padStart(film.pad, "0") + film.ext;
+    const spawn = (i, retry) => {
       const im = new Image();
-      im.src = film.base + String(i + 1).padStart(film.pad, "0") + film.ext;
-      im.decode?.().catch(() => {});
+      im._r = retry;
+      im.onload = () => requestAnimationFrame(() => film.draw && film.draw(film.lastP || 0));
+      im.src = src(i) + (retry ? "?r=" + retry : "");
       film.frames[i] = im;
+    };
+    const load = i => {
+      if (i < 0 || i >= film.count) return;
+      const ex = film.frames[i];
+      if (!ex) { spawn(i, 0); return; }
+      /* retry frames that failed (deploy races, flaky network) */
+      if (ex.complete && ex.naturalWidth === 0 && (ex._r || 0) < 3) spawn(i, (ex._r || 0) + 1);
     };
     film.load = load;
     for (let i = 0; i < film.count; i += 6) load(i);
     load(0); load(film.count - 1);
+    /* slow background sweep: fill and heal the whole strip */
+    let sweep = 0;
+    const sw = setInterval(() => {
+      let n = 0;
+      while (n < 10 && sweep < film.count * 2) {
+        load(sweep % film.count); sweep++; n++;
+      }
+      if (sweep >= film.count * 2) clearInterval(sw);
+    }, 700);
   } else {
     const im = new Image();
     im.src = "assets/img/hero-still.webp";
     try { await im.decode(); film.mode = "still"; film.img = im; } catch (e) { film.mode = "proc"; }
   }
-  let lastP = 0;
   function cover(im, scale = 1, ox = 0, oy = 0) {
     const cw = cv.width, ch = cv.height, iw = im.naturalWidth, ih = im.naturalHeight;
     if (!iw) return;
@@ -413,7 +429,7 @@ async function initFilm() {
     ctx.drawImage(im, (cw - w) / 2 + ox * cw, (ch - h) / 2 + oy * ch, w, h);
   }
   function draw(p) {
-    lastP = p;
+    film.lastP = p;
     ctx.clearRect(0, 0, cv.width, cv.height);
     if (film.mode === "frames") {
       let i = Math.round(p * (film.count - 1));
