@@ -312,15 +312,27 @@ function atmo() {
 function cursor() {
   if (TOUCH || RM) return;
   const c = $("#cur");
+  const trail = [0, 1].map(i => {
+    const d = document.createElement("span");
+    d.className = "cur-t";
+    document.body.appendChild(d);
+    return { el: d, x: -100, y: -100, k: .12 - i * .05 };
+  });
   let x = -100, y = -100, tx = x, ty = y, shown = false;
   addEventListener("pointermove", e => {
     tx = e.clientX; ty = e.clientY;
     if (!shown) { shown = true; c.classList.add("on"); x = tx; y = ty; }
   }, { passive: true });
-  document.addEventListener("mouseleave", () => { c.classList.remove("on"); shown = false; });
+  document.addEventListener("mouseleave", () => { c.classList.remove("on"); trail.forEach(t => t.el.style.opacity = 0); shown = false; });
   (function loop() {
     x = lerp(x, tx, .22); y = lerp(y, ty, .22);
     c.style.transform = `translate(${x}px,${y}px)`;
+    const speed = Math.hypot(tx - x, ty - y);
+    trail.forEach((t, i) => {
+      t.x = lerp(t.x, x, t.k * 2); t.y = lerp(t.y, y, t.k * 2);
+      t.el.style.transform = `translate(${t.x - 2}px,${t.y - 2}px)`;
+      t.el.style.opacity = shown ? Math.min(.55, speed * .02) * (1 - i * .4) : 0;
+    });
     requestAnimationFrame(loop);
   })();
   const grow = e => c.classList.toggle("grow", !!e.target.closest("a,button,.slice-head,.mas figure,[data-cur]"));
