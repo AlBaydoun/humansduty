@@ -171,6 +171,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .about-photos figure:nth-child(1){top:2%;inset-inline-start:4%;transform:rotate(-4deg)}
 .about-photos figure:nth-child(2){top:28%;inset-inline-start:34%;transform:rotate(2.5deg)}
 .about-photos figure:nth-child(3){top:56%;inset-inline-start:8%;transform:rotate(-1.5deg)}
+.about-photos figure{transition:transform .5s var(--spring),box-shadow .5s,border-color .4s;cursor:default}
+.about-photos figure:hover{transform:rotate(0) translateY(-8px) scale(1.03);border-color:rgba(242,163,60,.5);box-shadow:0 34px 80px rgba(0,0,0,.6);z-index:2}
 
 /* ══════════ 3 · STORY RAIL ══════════ */
 .story{position:relative;z-index:1}
@@ -301,7 +303,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .bank-copy:active{transform:scale(.96)}
 
 /* ══════════ 9 · CONTACT ══════════ */
-.contact{position:relative;z-index:1;background:var(--dawn);color:var(--ink);padding:clamp(5rem,12vh,9rem) var(--pad) 2rem}
+.contact{position:relative;z-index:1;background:var(--dawn);color:var(--ink);padding:clamp(5rem,12vh,9rem) var(--pad) 2rem;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:url("../assets/img/dawn.webp") center 30%/cover no-repeat;opacity:.16;-webkit-mask-image:linear-gradient(to bottom,#000,transparent 62%);mask-image:linear-gradient(to bottom,#000,transparent 62%);pointer-events:none}
+.contact>*{position:relative}
 .contact .sec-title{max-width:1400px;margin:0 auto 3rem}
 .con-grid{max-width:1400px;margin-inline:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
 .con-block h3{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
@@ -328,6 +332,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .lightbox figcaption{text-align:center;padding-top:1rem;color:var(--bone-dim);font-size:.9rem}
 .lb-x{position:absolute;top:1.2rem;inset-inline-end:1.6rem;font-size:2rem;color:var(--bone);opacity:.8}
 .lb-x:hover{opacity:1}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:2.6rem;color:var(--bone);opacity:.65;padding:1rem;line-height:1;transition:opacity .25s,transform .25s}
+.lb-nav:hover{opacity:1;transform:translateY(-50%) scale(1.15)}
+.lb-nav.prev{inset-inline-start:1rem}
+.lb-nav.next{inset-inline-end:1rem}
 
 /* ══════════ REVEALS (transform only, screenshot safe) ══════════ */
 .rv{transform:translateY(0)}

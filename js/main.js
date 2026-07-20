@@ -225,7 +225,9 @@ function wireAccordion() {
 }
 
 /* lightbox */
+let lbIndex = -1;
 function openLB(g) {
+  lbIndex = C ? C.gallery.indexOf(g) : -1;
   const lb = $("#lightbox");
   $("#lbImg").src = g.src;
   $("#lbImg").alt = g.caption?.[LANG] || "";
@@ -233,9 +235,21 @@ function openLB(g) {
   lb.hidden = false;
   document.body.style.overflow = "hidden";
 }
+function stepLB(d) {
+  if (!C || !C.gallery.length || lbIndex < 0) return;
+  lbIndex = (lbIndex + d + C.gallery.length) % C.gallery.length;
+  openLB(C.gallery[lbIndex]);
+}
 $("#lbX").addEventListener("click", closeLB);
+$("#lbPrev").addEventListener("click", () => stepLB(-1));
+$("#lbNext").addEventListener("click", () => stepLB(1));
 $("#lightbox").addEventListener("click", e => { if (e.target.id === "lightbox") closeLB(); });
-addEventListener("keydown", e => { if (e.key === "Escape") closeLB(); });
+addEventListener("keydown", e => {
+  if ($("#lightbox").hidden) return;
+  if (e.key === "Escape") closeLB();
+  if (e.key === "ArrowRight") stepLB(1);
+  if (e.key === "ArrowLeft") stepLB(-1);
+});
 function closeLB() { $("#lightbox").hidden = true; document.body.style.overflow = ""; }
 
 /* ═══ JOURNEY PALETTE ═══ */
@@ -527,16 +541,17 @@ function scenes() {
   /* STORY RAIL */
   const track = $("#railTrack"), ghost = $("#storyGhost"), spark = $("#railSpark");
   if (!RM && !MOBILE()) {
+    const RTL = () => document.documentElement.dir === "rtl";
     const dist = () => Math.max(0, track.scrollWidth - innerWidth + innerWidth * .1);
     gsap.to(track, {
-      x: () => -dist(), ease: "none",
+      x: () => (RTL() ? dist() : -dist()), ease: "none",
       scrollTrigger: {
         trigger: "#story", start: "top top", end: () => "+=" + (dist() + innerHeight * .4),
         pin: "#storyPin", scrub: .7, invalidateOnRefresh: true,
         onUpdate: st => {
           const p = st.progress;
-          ghost.style.transform = `translateY(-50%) translateX(${-p * 30}%)`;
-          spark.style.left = (p * 100) + "%";
+          ghost.style.transform = `translateY(-50%) translateX(${(RTL() ? 1 : -1) * p * 30}%)`;
+          spark.style.left = (RTL() ? 100 - p * 100 : p * 100) + "%";
           const yrs = C ? C.timeline.map(w => w.year) : ["2004"];
           const yi = Math.min(yrs.length - 1, Math.floor(p * yrs.length));
           if (ghost.textContent !== yrs[yi]) ghost.textContent = yrs[yi];
