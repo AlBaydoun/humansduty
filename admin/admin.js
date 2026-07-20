@@ -11,6 +11,7 @@ const API = "https://api.github.com";
 
 let TOKEN = "", CFG = { ...window.HD_REPO }, DATA = null, SHA = null;
 let dirty = false, uploads = []; /* {path, blobB64, previewUrl} */
+const MODE = CFG.mode === "php" ? "php" : "github"; /* "github" = GitHub Pages · "php" = self-hosted (Hostinger etc.) */
 
 const enc = s => btoa(unescape(encodeURIComponent(s)));
 const dec = s => decodeURIComponent(escape(atob(s.replace(/\n/g, ""))));
@@ -34,7 +35,23 @@ async function gh(path, opts = {}) {
 }
 const repoPath = p => `/repos/${CFG.owner}/${CFG.repo}/contents/${p}`;
 
+/* ── PHP backend client (self-hosted variant) ── */
+async function php(action, payload) {
+  const opts = payload
+    ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action, ...payload }) }
+    : {};
+  const r = await fetch("api.php" + (payload ? "" : "?action=" + action), opts);
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || r.status);
+  return j;
+}
+
 async function fetchContent() {
+  if (MODE === "php") {
+    const j = await php("content");
+    DATA = j.content; SHA = null;
+    return;
+  }
   const j = await gh(repoPath("content/content.json") + `?ref=${CFG.branch}`);
   SHA = j.sha;
   DATA = JSON.parse(dec(j.content));
@@ -65,42 +82,74 @@ function setState(msg, cls) {
 }
 
 /* ── login ── */
-function init() {
-  try {
-    const saved = JSON.parse(localStorage.getItem("hd_admin") || "null");
-    if (saved) { $("#tok").value = saved.token || ""; CFG = { ...CFG, ...saved.cfg }; }
-  } catch (e) {}
-  $("#owner").value = CFG.owner || "";
-  $("#repo").value = CFG.repo || "humansduty";
-  $("#branch").value = CFG.branch || "main";
-  if (!CFG.owner) $("#repoDet").open = true;
+async function init() {
+  if (MODE === "php") {
+    $("#repoDet").hidden = true;
+    $("#remember").closest("label").hidden = true;
+    const lab = $("#tok").closest("label");
+    lab.firstChild.textContent = "Password";
+    $("#tok").placeholder = "";
+    $(".hint").textContent = "Enter the admin password to manage the website content.";
+    try {
+      const st = await php("status");
+      if (!st.setup) {
+        lab.firstChild.textContent = "Choose an admin password (min 8 characters)";
+        $(".hint").textContent = "First time here: set the admin password for this website.";
+        $("#loginBtn").textContent = "Set password and open";
+        $("#loginBtn").dataset.setup = "1";
+      } else if (st.authed) {
+        await enter();
+        return;
+      }
+    } catch (e) { $("#loginErr").textContent = "Backend not reachable: " + e.message; }
+  } else {
+    try {
+      const saved = JSON.parse(localStorage.getItem("hd_admin") || "null");
+      if (saved) { $("#tok").value = saved.token || ""; CFG = { ...CFG, ...saved.cfg }; }
+    } catch (e) {}
+    $("#owner").value = CFG.owner || "";
+    $("#repo").value = CFG.repo || "humansduty";
+    $("#branch").value = CFG.branch || "main";
+    if (!CFG.owner) $("#repoDet").open = true;
+  }
   $("#loginBtn").addEventListener("click", login);
   $("#tok").addEventListener("keydown", e => e.key === "Enter" && login());
 }
+async function enter() {
+  await fetchContent();
+  $("#login").hidden = true;
+  $("#dash").hidden = false;
+  buildAll();
+  setState(MODE === "php" ? "Loaded" : "Loaded · " + CFG.owner + "/" + CFG.repo, "ok");
+}
 async function login() {
-  TOKEN = $("#tok").value.trim();
-  CFG.owner = $("#owner").value.trim();
-  CFG.repo = $("#repo").value.trim();
-  CFG.branch = $("#branch").value.trim() || "main";
   const err = $("#loginErr");
   err.textContent = "";
-  if (!TOKEN || !CFG.owner || !CFG.repo) { err.textContent = "Token, owner and repository are required."; return; }
   $("#loginBtn").textContent = "Connecting...";
   try {
-    await fetchContent();
+    if (MODE === "php") {
+      const pw = $("#tok").value;
+      if ($("#loginBtn").dataset.setup) await php("setup", { password: pw });
+      else await php("login", { password: pw });
+      await enter();
+      return;
+    }
+    TOKEN = $("#tok").value.trim();
+    CFG.owner = $("#owner").value.trim();
+    CFG.repo = $("#repo").value.trim();
+    CFG.branch = $("#branch").value.trim() || "main";
+    if (!TOKEN || !CFG.owner || !CFG.repo) { err.textContent = "Token, owner and repository are required."; $("#loginBtn").textContent = "Open dashboard"; return; }
+    await enter();
     if ($("#remember").checked) {
       try { localStorage.setItem("hd_admin", JSON.stringify({ token: TOKEN, cfg: CFG })); } catch (e) {}
     }
-    $("#login").hidden = true;
-    $("#dash").hidden = false;
-    buildAll();
-    setState("Loaded · " + CFG.owner + "/" + CFG.repo, "ok");
   } catch (e) {
     err.textContent = "Could not load content: " + e.message;
   }
-  $("#loginBtn").textContent = "Open dashboard";
+  $("#loginBtn").textContent = $("#loginBtn").dataset.setup ? "Set password and open" : "Open dashboard";
 }
-$("#logout")?.addEventListener("click", () => {
+$("#logout")?.addEventListener("click", async () => {
+  if (MODE === "php") { try { await php("logout", {}); } catch (e) {} }
   try { localStorage.removeItem("hd_admin"); } catch (e) {}
   location.reload();
 });
@@ -421,13 +470,24 @@ $("#publish").addEventListener("click", async () => {
     for (const u of uploads) {
       n++;
       setState(`Uploading photo ${n}/${uploads.length}...`, "busy");
-      let sha;
-      try { const ex = await gh(repoPath(u.path) + `?ref=${CFG.branch}`); sha = ex.sha; } catch (e) {}
-      await putFile(u.path, u.b64, "Admin: add photo " + u.path, sha);
+      if (MODE === "php") {
+        await php("upload", { name: u.path.split("/").pop(), b64: u.b64 });
+      } else {
+        let sha;
+        try { const ex = await gh(repoPath(u.path) + `?ref=${CFG.branch}`); sha = ex.sha; } catch (e) {}
+        await putFile(u.path, u.b64, "Admin: add photo " + u.path, sha);
+      }
     }
     uploads = [];
     setState("Saving content...", "busy");
     const clean = JSON.parse(JSON.stringify(DATA, (k, v) => k === "_preview" ? undefined : v));
+    if (MODE === "php") {
+      await php("save", { content: clean });
+      dirty = false;
+      setState("Published. Changes are live now.", "ok");
+      renderGallery();
+      return;
+    }
     try {
       await putFile("content/content.json", enc(JSON.stringify(clean, null, 2)), "Admin: update content", SHA);
     } catch (e) {
