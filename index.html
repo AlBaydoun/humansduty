@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Human's Duty | Together, we make a difference.</title>
+<meta name="description" content="Human's Duty is a Lebanese NGO in Bint Jbeil, founded 2011 with roots since 2004. Vocational training, health, relief and awareness. Destroyed in 2024, rising again.">
+<meta property="og:title" content="Human's Duty | Together, we make a difference.">
+<meta property="og:description" content="A Lebanese NGO rising from the ashes of Bint Jbeil. Vocational training, free medicine, relief and awareness since 2004.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="theme-color" content="#0B0908">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/alexandria-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/alexandria-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/main.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NGO","name":"Human's Duty","alternateName":"واجب الإنسان","foundingDate":"2011-09-27","email":"info@humansduty.org","telephone":"+9617011308 1","address":[{"@type":"PostalAddress","addressLocality":"Bint Jbeil","addressRegion":"Saf El Hawa","addressCountry":"LB"},{"@type":"PostalAddress","addressLocality":"Beirut","addressRegion":"Ain El Remmaneh","addressCountry":"LB"}]}
+</script>
+</head>
+<body data-lang="en">
+
+<a class="skip" href="#about" data-t="ui.skip">Skip to content</a>
+
+<!-- ignition loader -->
+<div class="ignite" id="ignite" aria-hidden="true">
+  <div class="ignite-core"></div>
+  <div class="ignite-word" data-t="meta.site_name">Human's Duty</div>
+</div>
+
+<!-- atmosphere: journey gradient + embers -->
+<canvas id="atmo" aria-hidden="true"></canvas>
+
+<!-- custom cursor -->
+<div class="cur" id="cur" aria-hidden="true"><span class="cur-dot"></span><span class="cur-glow"></span></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Human's Duty, home">
+    <span class="brand-mark" id="brandMark" aria-hidden="true"></span>
+    <span class="brand-word"><b data-t="meta.site_name">Human's Duty</b><i data-t="meta.site_name_alt">واجب الإنسان</i></span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#story" data-t="ui.nav_story">Our story</a>
+    <a href="#pillars" data-t="ui.nav_work">What we do</a>
+    <a href="#projects" data-t="ui.nav_projects">Projects</a>
+    <a href="#contact" data-t="ui.nav_contact">Contact us</a>
+  </nav>
+  <div class="nav-right">
+    <button class="lang" id="langBtn" type="button" aria-label="عربي"><span>EN</span><span>ع</span></button>
+    <a class="donate-nav" href="#donate"><em></em><span data-t="hero.cta_donate">Donate</span></a>
+    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a href="#story" data-t="ui.nav_story">Our story</a>
+  <a href="#pillars" data-t="ui.nav_work">What we do</a>
+  <a href="#projects" data-t="ui.nav_projects">Projects</a>
+  <a href="#donate" data-t="hero.cta_donate">Donate</a>
+  <a href="#contact" data-t="ui.nav_contact">Contact us</a>
+</div>
+
+<main id="top">
+
+<!-- ─── 1 · HERO: the descent ─── -->
+<section class="hero" id="hero" aria-label="The descent of the phoenix">
+  <div class="hero-pin" id="heroPin">
+    <canvas class="film" id="film"></canvas>
+    <div class="film-fallback" id="filmFallback" aria-hidden="true"></div>
+    <div class="hero-vignette" aria-hidden="true"></div>
+
+    <div class="hero-lockup" id="heroLockup">
+      <p class="hero-kicker" lang="ar" data-t="meta.tagline">معاً نصنع الفرق</p>
+      <h1 class="hero-title"><span data-t="meta.site_name">Human's Duty</span></h1>
+      <p class="hero-sub" data-t="meta.tagline_en">Together, we make a difference.</p>
+      <div class="hero-ctas">
+        <a class="cta-story" href="#about"><span data-t="hero.cta_story">Our story</span><b aria-hidden="true"></b></a>
+      </div>
+    </div>
+
+    <div class="chapter" data-ch="0"><h2 class="ch-t"></h2><p class="ch-s"></p></div>
+    <div class="chapter" data-ch="1"><h2 class="ch-t"></h2><p class="ch-s"></p></div>
+    <div class="chapter" data-ch="2"><h2 class="ch-t"></h2><p class="ch-s"></p></div>
+
+    <div class="alti" id="alti" aria-hidden="true">
+      <span class="alti-track"><span class="alti-fill" id="altiFill"></span></span>
+      <span class="alti-read" id="altiRead">2100m</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 2 · ABOUT ─── -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <header class="about-head">
+      <h2 class="sec-title" data-t="about.heading">A duty carried since 2004</h2>
+      <p class="about-fact mono">EST 27.09.2011 · N° 137 · BINT JBEIL, LEBANON</p>
+    </header>
+    <div class="about-body" id="aboutBody">
+      <p data-t="about.paragraphs.0">Human's Duty is a Lebanese NGO and non-profit, founded on 27 September 2011 under Interior Ministry notification no. 137. Its roots reach back to the Lebanese Sports Club of Bint Jbeil, established in 2004.</p>
+      <p data-t="about.paragraphs.1">In 2006 we opened a center teaching computers and English. Over two consecutive years, with OTI support funded by USAID, nearly one hundred young women and men trained in youth, environmental, health, social and sports awareness. Freed from dependency and sectarian intolerance, they became the conscious, independent generation of the Bint Jbeil region.</p>
+      <p data-t="about.paragraphs.2">From those seeds grew the Lebanese Vocational School of Life, and in 2011, Human's Duty. Our work continues across Lebanon: Bint Jbeil, Beirut, Mount Lebanon, Koura and beyond.</p>
+    </div>
+    <div class="about-photos" id="aboutPhotos" aria-label="Archive photographs"></div>
+  </div>
+</section>
+
+<!-- ─── 3 · STORY RAIL ─── -->
+<section class="story" id="story" aria-label="Timeline of Human's Duty">
+  <div class="story-pin" id="storyPin">
+    <div class="story-ghost" id="storyGhost" aria-hidden="true">2004</div>
+    <div class="story-head">
+      <h2 class="sec-title" data-t="ui.story_title">The road from 2004</h2>
+    </div>
+    <div class="rail" id="rail">
+      <div class="rail-thread" aria-hidden="true"><i id="railSpark"></i></div>
+      <ol class="rail-track" id="railTrack"></ol>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 4 · MEMORIAL 2024 ─── -->
+<section class="memorial" id="memorial" aria-label="2024, the destruction of our center">
+  <div class="mem-media" id="memMedia" aria-hidden="true"></div>
+  <div class="mem-veil" id="memVeil" aria-hidden="true"></div>
+  <div class="mem-copy">
+    <p class="mem-year mono">2024</p>
+    <h2 class="mem-line"><span data-t="memorial.line1">Our center was destroyed.</span><br><em data-t="memorial.line2">Our duty was not.</em></h2>
+    <p class="mem-body" data-t="memorial.body">In the war of 2024, our home in Bint Jbeil, Saf El Hawa, was reduced to rubble. Everything we teach survived: in the people who learned it.</p>
+  </div>
+</section>
+
+<!-- ─── 5 · PILLARS ─── -->
+<section class="pillars" id="pillars">
+  <h2 class="sec-title" data-t="pillars_heading">What we do</h2>
+  <div class="bento" id="bento"></div>
+</section>
+
+<!-- ─── 6 · PROJECTS ─── -->
+<section class="projects" id="projects">
+  <header class="proj-head">
+    <h2 class="sec-title" data-t="projects_heading">Our projects</h2>
+    <p class="proj-intro" data-t="projects_intro">Awareness first. Through vocational courses and direct support, we help people build a better future, especially those facing financial hardship.</p>
+  </header>
+  <ol class="acc" id="acc"></ol>
+</section>
+
+<!-- ─── 7 · GALLERY ─── -->
+<section class="gallery" id="gallery">
+  <h2 class="sec-title" data-t="gallery_heading">Moments from the field</h2>
+  <div class="mas" id="mas"></div>
+</section>
+
+<!-- ─── 8 · DONATION ─── -->
+<section class="donate" id="donate">
+  <div class="don-left">
+    <h2 class="don-title" data-t="donation.heading">Help us rise again</h2>
+    <p class="don-body" data-t="donation.body">We welcome financial and in-kind donations from friends in Lebanon and abroad: institutions, humanitarian and professional organizations. Every donation follows full legal procedure, with management, accountability, and a direct link between the donor and the path of their gift.</p>
+    <div class="don-cta" id="donCta" role="note">
+      <span class="don-cta-label" data-t="ui.donate_how">Donate by bank transfer</span>
+      <span class="don-cta-hint" data-t="ui.donate_hint">Details beside, tap any line to copy</span>
+    </div>
+    <div class="don-programs">
+      <h3 class="don-ph" data-t="donation.programs_heading">Programs open for support</h3>
+      <ul id="donPrograms"></ul>
+    </div>
+  </div>
+  <div class="don-right">
+    <h3 class="bank-h mono" data-t="donation.bank_heading">Bank transfer</h3>
+    <dl class="bank" id="bank"></dl>
+  </div>
+</section>
+
+<!-- ─── 9 · CONTACT / FOOTER ─── -->
+<section class="contact" id="contact">
+  <h2 class="sec-title" data-t="contact.heading">Contact us</h2>
+  <div class="con-grid" id="conGrid"></div>
+  <footer class="foot">
+    <div class="foot-brand">
+      <span class="brand-mark lg" aria-hidden="true"></span>
+      <p><b data-t="meta.site_name">Human's Duty</b> · <span lang="ar" data-t="meta.site_name_alt">واجب الإنسان</span></p>
+      <p class="foot-line" data-t="meta.subtitle">Towards building a free community and a civil state</p>
+    </div>
+    <p class="foot-legal mono"><span data-t="ui.foot_est">EST 2011 · NOTIFICATION 137 · LEBANON</span> · <a class="adm" href="admin/">Admin</a></p>
+  </footer>
+</section>
+
+</main>
+
+<div class="lightbox" id="lightbox" aria-modal="true" role="dialog" hidden>
+  <button class="lb-x" id="lbX" aria-label="Close">×</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<script src="js/vendor/gsap.min.js" defer></script>
+<script src="js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/vendor/ScrollToPlugin.min.js" defer></script>
+<script src="js/vendor/lenis.min.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

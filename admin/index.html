@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · Human's Duty</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login" id="login">
+  <div class="login-card">
+    <img src="../assets/img/logo.svg" alt="" width="46" height="46">
+    <h1>Human's Duty <span>Admin</span></h1>
+    <p class="hint">Paste your GitHub access token to manage the website content. The token stays in this browser only.</p>
+    <label>Access token<input type="password" id="tok" placeholder="github_pat_..." autocomplete="off"></label>
+    <details id="repoDet"><summary>Repository settings</summary>
+      <label>Owner<input type="text" id="owner"></label>
+      <label>Repository<input type="text" id="repo"></label>
+      <label>Branch<input type="text" id="branch" value="main"></label>
+    </details>
+    <label class="chk"><input type="checkbox" id="remember" checked> Remember on this device</label>
+    <button class="btn gold" id="loginBtn">Open dashboard</button>
+    <p class="err" id="loginErr"></p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dash" id="dash" hidden>
+  <header class="top">
+    <div class="top-brand"><img src="../assets/img/logo.svg" alt="" width="30" height="30"><b>Human's Duty</b><span>Admin</span></div>
+    <nav class="tabs" id="tabs">
+      <button data-tab="texts" class="on">Site texts</button>
+      <button data-tab="timeline">Timeline</button>
+      <button data-tab="projects">Projects</button>
+      <button data-tab="gallery">Gallery</button>
+      <button data-tab="photos">About photos</button>
+      <button data-tab="bank">Bank</button>
+    </nav>
+    <div class="top-actions">
+      <a class="ghost" href="../" target="_blank" rel="noopener">View site</a>
+      <button class="ghost" id="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="panes">
+    <section class="pane on" data-pane="texts" id="paneTexts"></section>
+    <section class="pane" data-pane="timeline"><div class="list" id="listTimeline"></div><button class="btn add" data-add="timeline">+ Add year</button></section>
+    <section class="pane" data-pane="projects"><div class="list" id="listProjects"></div><button class="btn add" data-add="projects">+ Add project</button></section>
+    <section class="pane" data-pane="gallery">
+      <div class="drop" id="drop">Drop photos here or <label class="linklike">browse<input type="file" id="galFiles" accept="image/*" multiple hidden></label><span class="drop-note">Photos are resized automatically before upload</span></div>
+      <div class="gal-grid" id="galGrid"></div>
+    </section>
+    <section class="pane" data-pane="photos"><p class="pane-hint">Three archive photos shown in the About section. Use small, meaningful moments.</p><div class="list" id="listPhotos"></div><button class="btn add" data-add="photos">+ Add photo slot</button></section>
+    <section class="pane" data-pane="bank"><p class="pane-hint">Rows of the bank transfer table in the donation section.</p><div class="list" id="listBank"></div><button class="btn add" data-add="bank">+ Add row</button></section>
+  </main>
+
+  <footer class="pub">
+    <div class="pub-state" id="pubState">No changes yet</div>
+    <button class="btn gold big" id="publish" disabled>Publish changes</button>
+  </footer>
+</div>
+
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+name: Fetch generated assets
+on:
+  workflow_dispatch:
+  push:
+    paths: ["asset-manifest.json"]
+permissions:
+  contents: write
+concurrency:
+  group: fetch-assets
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download manifest entries
+        run: |
+          set -e
+          count=$(jq length asset-manifest.json)
+          echo "fetching $count assets"
+          for i in $(seq 0 $((count-1))); do
+            url=$(jq -r ".[$i].url" asset-manifest.json)
+            path=$(jq -r ".[$i].path" asset-manifest.json)
+            mkdir -p "$(dirname "$path")"
+            if [ ! -f "$path" ] || [ "$(jq -r ".[$i].force // empty" asset-manifest.json)" = "true" ]; then
+              echo "GET $path"
+              curl -fsSL --retry 4 --retry-delay 3 -o "$path" "$url"
+            else
+              echo "skip existing $path"
+            fi
+          done
+      - name: Commit
+        run: |
+          git config user.name "asset-relay"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "assets: fetch generated media"
+          git push
