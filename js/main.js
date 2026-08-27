@@ -63,7 +63,7 @@ const t = p => {
 /* ═══ CONTENT LOAD ═══ */
 async function loadContent() {
   try {
-    const r = await fetch("content/content.json", { cache: "no-cache" });
+    const r = await fetch("content/content.json?v=5", { cache: "no-cache" });
     C = await r.json();
   } catch (e) { C = null; console.warn("content load failed", e); }
 }
@@ -507,7 +507,7 @@ async function initFilm() {
   const fit = () => { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; };
   fit(); addEventListener("resize", () => { fit(); draw(film.lastP || 0); });
   let manifest = null;
-  try { manifest = await (await fetch("assets/video/frames.json", { cache: "force-cache" })).json(); } catch (e) {}
+  try { manifest = await (await fetch("assets/video/frames.json?v=5", { cache: "force-cache" })).json(); } catch (e) {}
   if (manifest && manifest.count) {
     film.mode = "frames";
     const mob = MOBILE() && manifest.mobile;
