@@ -268,6 +268,32 @@ const LISTS = {
     blank: () => ({ src: "", caption: { en: "", ar: "" } }),
     fields: base => [imgField("Photo", `${base}.src`), fDuo("Caption", `${base}.caption`)]
   },
+  videos: {
+    holder: "#listVideos", title: it => (it.title?.en || it.id || "New video"),
+    blank: () => ({ id: "", title: { en: "", ar: "" }, thumb: "" }),
+    fields: base => {
+      const idw = document.createElement("div");
+      idw.innerHTML = "<label>YouTube link or video ID</label>";
+      const inp = document.createElement("input"); inp.type = "text";
+      inp.value = get(base + ".id") || "";
+      inp.placeholder = "https://youtu.be/XXXXXXXXXXX";
+      const prev = document.createElement("div");
+      prev.className = "imgrow"; prev.style.marginTop = ".6rem";
+      const draw = () => {
+        const v = get(base + ".id");
+        prev.innerHTML = v
+          ? `<img src="https://i.ytimg.com/vi/${v}/mqdefault.jpg" alt=""><span style="font-size:.75rem;color:var(--dim)">ID: ${v}</span>`
+          : `<span class="noimg">no video</span>`;
+      };
+      inp.addEventListener("input", () => {
+        const m = inp.value.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/) || inp.value.match(/^([\w-]{11})$/);
+        set(base + ".id", m ? m[1] : inp.value.trim());
+        draw();
+      });
+      idw.appendChild(inp); idw.appendChild(prev); draw();
+      return [idw, fDuo("Title", `${base}.title`)];
+    }
+  },
   bank: {
     holder: "#listBank", root: "donation.bank", title: it => (it.label?.en || "") + " · " + (it.value || ""),
     blank: () => ({ label: { en: "", ar: "" }, value: "", copy: true }),
@@ -452,8 +478,53 @@ function strList(label, path) {
   return w;
 }
 
+function buildCenterPane() {
+  const pane = $("#paneCenter");
+  if (!pane || !DATA.center) return;
+  pane.innerHTML = "";
+  const K = DATA.center;
+  pane.append(
+    grp("Section text",
+      fDuo("Eyebrow", "center.eyebrow"),
+      fDuo("Headline", "center.heading"),
+      fDuo("Paragraph", "center.body", "area"),
+      fDuo("Label on the intact side", "center.label_before"),
+      fDuo("Label on the destroyed side", "center.label_after"),
+      fDuo("Drag hint", "center.hint"))
+  );
+  K.views.forEach((v, i) => {
+    pane.append(
+      grp("Comparison " + (i + 1),
+        fDuo("Name of this viewpoint", `center.views.${i}.name`),
+        imgField("BEFORE photo (intact)", `center.views.${i}.before`),
+        imgField("AFTER photo (destroyed)", `center.views.${i}.after`),
+        fDuo("Caption under the slider", `center.views.${i}.note`, "area"))
+    );
+  });
+  const addBtn = document.createElement("button");
+  addBtn.className = "btn add"; addBtn.type = "button"; addBtn.textContent = "+ Add another comparison";
+  addBtn.addEventListener("click", () => {
+    K.views.push({ id: "v" + Date.now().toString(36), name: { en: "", ar: "" }, before: "", after: "", note: { en: "", ar: "" } });
+    markDirty(); buildCenterPane();
+  });
+  if (K.views.length > 1) {
+    const del = document.createElement("button");
+    del.className = "btn"; del.type = "button"; del.textContent = "Remove last comparison";
+    del.style.marginInlineStart = ".6rem";
+    del.addEventListener("click", () => {
+      if (confirm("Remove the last comparison?")) { K.views.pop(); markDirty(); buildCenterPane(); }
+    });
+    pane.append(addBtn, del);
+  } else pane.append(addBtn);
+  pane.append(grp("After the destruction",
+    imgField("Rebuilding photo", "center.rebuild.image"),
+    fDuo("Caption", "center.rebuild.caption")));
+}
+
 function buildAll() {
   buildTexts();
+  buildCenterPane();
+  renderList("videos");
   renderList("timeline");
   renderList("projects");
   renderList("photos");

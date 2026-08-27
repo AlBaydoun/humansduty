@@ -27,7 +27,9 @@ const UI = {
     note: "From Bint Jbeil to all of Lebanon. Write to us in Arabic, English or French.",
     title: "Human's Duty | Together, we make a difference.",
     desc: "Human's Duty is a Lebanese NGO in Bint Jbeil, founded 2011 with roots since 2004. Vocational training, health, relief and awareness. Destroyed in 2024, rising again.",
-    alt_archive: "Archive photograph", meters: "m", ground: "GROUND"
+    alt_archive: "Archive photograph", meters: "m", ground: "GROUND",
+    nav_center: "The center", play: "Play video", before_alt: "The center before the war",
+    after_alt: "The center after the war of 2024"
   },
   ar: {
     skip: "تجاوز إلى المحتوى", nav_story: "قصّتنا", nav_work: "ما نقوم به",
@@ -40,7 +42,9 @@ const UI = {
     note: "من بنت جبيل إلى كل لبنان. راسلونا بالعربية أو الإنكليزية أو الفرنسية.",
     title: "واجب البشر | معاً نصنع الفرق",
     desc: "«واجب البشر» جمعية لبنانية غير حكومية في بنت جبيل، تأسست عام 2011 وتمتد جذورها إلى 2004. تدريب مهني وصحة وإغاثة وتوعية. دُمّر مركزها عام 2024 وهي تنهض من جديد.",
-    alt_archive: "صورة من الأرشيف", meters: "م", ground: "الأرض"
+    alt_archive: "صورة من الأرشيف", meters: "م", ground: "الأرض",
+    nav_center: "المركز", play: "تشغيل الفيديو", before_alt: "المركز قبل الحرب",
+    after_alt: "المركز بعد حرب 2024"
   }
 };
 
@@ -203,6 +207,28 @@ function buildDynamic() {
     bank.appendChild(row);
   });
 
+  /* the center: before/after */
+  buildCenter();
+
+  /* films */
+  const fg = $("#filmGrid");
+  if (fg) {
+    fg.innerHTML = "";
+    (C.videos || []).forEach(v => {
+      const btn = document.createElement("button");
+      btn.className = "film"; btn.type = "button";
+      btn.setAttribute("aria-label", (v.title?.[LANG] || "") + " — " + UI[LANG].play);
+      const poster = v.thumb || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
+      btn.innerHTML = `<img src="${poster}" alt="" loading="lazy" onerror="this.closest('.film').classList.add('noimg');this.remove()">
+        <span class="film-play"><span></span></span>
+        <span class="film-cap">${v.title?.[LANG] || ""}</span>`;
+      btn.addEventListener("click", () => {
+        btn.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0" title="${(v.title?.[LANG] || "").replace(/"/g, "&quot;")}" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>`;
+      }, { once: true });
+      fg.appendChild(btn);
+    });
+  }
+
   /* contact */
   const cg = $("#conGrid");
   cg.innerHTML = "";
@@ -210,6 +236,106 @@ function buildDynamic() {
   cg.appendChild(mk(UI[LANG].phones, C.contact.phones.map(p => `<a href="tel:${p.replace(/\s/g, "")}" dir="ltr">${p}</a>`).join("")));
   cg.appendChild(mk(UI[LANG].emails, C.contact.emails.map(e => `<a href="mailto:${e}">${e}</a>`).join("")));
   cg.appendChild(mk(UI[LANG].addresses, C.contact.addresses.map(a => `<p>${a[LANG]}</p>`).join("") + `<p class="con-note">${UI[LANG].note}</p>`));
+}
+
+/* ═══ THE CENTER: draggable before/after ═══ */
+let cmpView = 0, cmpPos = 55, cmpHinted = false;
+function buildCenter() {
+  if (!C || !C.center) return;
+  const K = C.center;
+  $$('[data-t="center.body"]').forEach(el => el.textContent = K.body[LANG]);
+
+  const tabs = $("#ctrTabs");
+  tabs.innerHTML = "";
+  K.views.forEach((v, i) => {
+    const b = document.createElement("button");
+    b.className = "ctr-tab"; b.type = "button"; b.role = "tab";
+    b.textContent = v.name[LANG];
+    b.setAttribute("aria-selected", i === cmpView ? "true" : "false");
+    b.addEventListener("click", () => { cmpView = i; buildCenter(); });
+    tabs.appendChild(b);
+  });
+
+  const v = K.views[cmpView];
+  const bImg = $("#cmpBefore"), aImg = $("#cmpAfter");
+  bImg.src = v.before; bImg.alt = UI[LANG].before_alt;
+  aImg.src = v.after;  aImg.alt = UI[LANG].after_alt;
+  $("#cmpTagB").textContent = K.label_before[LANG];
+  $("#cmpTagA").textContent = K.label_after[LANG];
+  $("#cmpNote").textContent = v.note[LANG];
+  $("#cmpHint").textContent = K.hint[LANG];
+  $("#ctrRebuildImg").src = K.rebuild.image;
+  $("#ctrRebuildImg").alt = K.rebuild.caption[LANG];
+  $("#ctrRebuildCap").textContent = K.rebuild.caption[LANG];
+
+  setCmp(cmpPos);
+  wireCmp();
+}
+let cmpWired = false;
+function setCmp(p) {
+  cmpPos = clamp(p, 0, 100);
+  const stage = $("#cmpStage");
+  if (!stage) return;
+  stage.style.setProperty("--pos", cmpPos + "%");
+  $("#cmpHandle").style.left = cmpPos + "%";
+  $("#cmpHandle").setAttribute("aria-valuenow", Math.round(cmpPos));
+  $("#cmpTagB").style.opacity = cmpPos < 14 ? 0 : 1;
+  $("#cmpTagA").style.opacity = cmpPos > 86 ? 0 : 1;
+}
+function wireCmp() {
+  if (cmpWired) return;
+  cmpWired = true;
+  const stage = $("#cmpStage"), fig = $("#cmp"), handle = $("#cmpHandle");
+  const RTL = () => document.documentElement.dir === "rtl";
+  const fromEvent = e => {
+    const r = stage.getBoundingClientRect();
+    let p = ((e.clientX - r.left) / r.width) * 100;
+    if (RTL()) p = 100 - p;
+    return p;
+  };
+  let dragging = false;
+  const down = e => {
+    dragging = true; cmpHinted = true;
+    fig.classList.add("dragging");
+    stage.setPointerCapture?.(e.pointerId);
+    setCmp(fromEvent(e));
+  };
+  const move = e => { if (dragging) { e.preventDefault(); setCmp(fromEvent(e)); } };
+  const up = () => { dragging = false; fig.classList.remove("dragging"); };
+  stage.addEventListener("pointerdown", down);
+  stage.addEventListener("pointermove", move);
+  addEventListener("pointerup", up);
+  addEventListener("pointercancel", up);
+  stage.addEventListener("pointerenter", () => { if (!dragging) cmpHinted = true; });
+  handle.addEventListener("keydown", e => {
+    const step = e.shiftKey ? 10 : 3;
+    const dir = RTL() ? -1 : 1;
+    if (e.key === "ArrowLeft") { setCmp(cmpPos - step * dir); e.preventDefault(); cmpHinted = true; }
+    if (e.key === "ArrowRight") { setCmp(cmpPos + step * dir); e.preventDefault(); cmpHinted = true; }
+    if (e.key === "Home") { setCmp(0); e.preventDefault(); }
+    if (e.key === "End") { setCmp(100); e.preventDefault(); }
+  });
+
+  /* one-time invitation sweep when the section is first reached */
+  if (!RM) {
+    const io = new IntersectionObserver(en => {
+      en.forEach(x => {
+        if (!x.isIntersecting || cmpHinted) return;
+        cmpHinted = true;
+        const start = cmpPos, t0 = performance.now();
+        const run = t => {
+          const k = Math.min(1, (t - t0) / 2200);
+          const e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+          const sweep = Math.sin(e * Math.PI) * 26;
+          setCmp(start - sweep);
+          if (k < 1) requestAnimationFrame(run); else setCmp(start);
+        };
+        requestAnimationFrame(run);
+        io.disconnect();
+      });
+    }, { threshold: .55 });
+    io.observe(stage);
+  }
 }
 
 /* accordion */

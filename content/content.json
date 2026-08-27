@@ -1,789 +1,956 @@
 {
-  "meta": {
-    "version": 1,
-    "site_name": {
-      "en": "Human's Duty",
-      "ar": "واجب البشر"
-    },
-    "tagline": {
-      "en": "Together, we make a difference.",
-      "ar": "معاً نصنع الفرق"
-    },
-    "subtitle": {
-      "en": "Towards building a free community and a civil state",
-      "ar": "نحو بناء مجتمعٍ حرّ ودولةٍ مدنيّة"
-    },
-    "founded": "27.09.2011",
-    "notification": "137"
-  },
-  "hero": {
-    "chapters": [
-      {
-        "title": {
-          "en": "Born of fire",
-          "ar": "وُلدت من النار"
+    "meta": {
+        "version": 1,
+        "site_name": {
+            "en": "Human's Duty",
+            "ar": "واجب البشر"
         },
-        "sub": {
-          "en": "Above a wounded land, a promise took wing.",
-          "ar": "فوق أرضٍ جريحة، حلّق وعدٌ بالحياة."
-        }
-      },
-      {
-        "title": {
-          "en": "Descending to serve",
-          "ar": "تنزل لتخدم"
+        "tagline": {
+            "en": "Together, we make a difference.",
+            "ar": "معاً نصنع الفرق"
         },
-        "sub": {
-          "en": "Toward Bint Jbeil, toward every town in need.",
-          "ar": "نحو بنت جبيل، نحو كلّ بلدةٍ تحتاج."
-        }
-      },
-      {
-        "title": {
-          "en": "Duty becomes dawn",
-          "ar": "الواجب يصبح فجراً"
+        "subtitle": {
+            "en": "Towards building a free community and a civil state",
+            "ar": "نحو بناء مجتمعٍ حرّ ودولةٍ مدنيّة"
         },
-        "sub": {
-          "en": "Awareness is the fire that rebuilds.",
-          "ar": "الوعي هو النار التي تُعيد البناء."
+        "founded": "27.09.2011",
+        "notification": "137"
+    },
+    "hero": {
+        "chapters": [
+            {
+                "title": {
+                    "en": "Born of fire",
+                    "ar": "وُلدت من النار"
+                },
+                "sub": {
+                    "en": "Above a wounded land, a promise took wing.",
+                    "ar": "فوق أرضٍ جريحة، حلّق وعدٌ بالحياة."
+                }
+            },
+            {
+                "title": {
+                    "en": "Descending to serve",
+                    "ar": "تنزل لتخدم"
+                },
+                "sub": {
+                    "en": "Toward Bint Jbeil, toward every town in need.",
+                    "ar": "نحو بنت جبيل، نحو كلّ بلدةٍ تحتاج."
+                }
+            },
+            {
+                "title": {
+                    "en": "Duty becomes dawn",
+                    "ar": "الواجب يصبح فجراً"
+                },
+                "sub": {
+                    "en": "Awareness is the fire that rebuilds.",
+                    "ar": "الوعي هو النار التي تُعيد البناء."
+                }
+            }
+        ],
+        "cta_story": {
+            "en": "Our story",
+            "ar": "قصّتنا"
+        },
+        "cta_donate": {
+            "en": "Donate",
+            "ar": "تبرّع"
         }
-      }
+    },
+    "about": {
+        "heading": {
+            "en": "A duty carried since 2004",
+            "ar": "واجبٌ نحمله منذ 2004"
+        },
+        "paragraphs": [
+            {
+                "en": "Human's Duty is a Lebanese NGO and non-profit, founded on 27 September 2011 under Interior Ministry notification no. 137. Its roots reach back to the Lebanese Sports Club of Bint Jbeil, established in 2004.",
+                "ar": "«واجب البشر» جمعية لبنانية غير حكومية لا تبغى الربح، تأسست في 27 أيلول 2011 بموجب علم وخبر رقم 137 صادر عن وزارة الداخلية اللبنانية. تمتد جذورها إلى النادي الرياضي اللبناني في بنت جبيل، الذي تأسس عام 2004."
+            },
+            {
+                "en": "In 2006 we opened a center teaching computers and English. Over two consecutive years, with OTI support funded by USAID, nearly one hundred young women and men trained in youth, environmental, health, social and sports awareness. Freed from dependency and sectarian intolerance, they became the conscious, independent generation of the Bint Jbeil region.",
+                "ar": "في عام 2006 افتتحنا، بمساعدة وكالة التنمية، مركزاً لتعليم الكمبيوتر واللغة الإنكليزية. وعلى مدى عامين متتاليين، وبدعم من منظمة OTI بتمويل من USAID، تدرّب نحو مئة شابة وشاب على التوعية الشبابية والبيئية والصحية والاجتماعية والرياضية، فتحرروا من التبعية والتعصب الطائفي، وشكّلوا الجيل الواعي المستقل في منطقة بنت جبيل."
+            },
+            {
+                "en": "From those seeds grew the Lebanese Vocational School of Life, and in 2011, Human's Duty. Our work continues across Lebanon: Bint Jbeil, Beirut, Mount Lebanon, Koura and beyond.",
+                "ar": "من تلك البذور نشأت المدرسة اللبنانية المهنية للحياة، ثم جمعية «واجب البشر» عام 2011. ويستمر عملنا في مختلف المناطق اللبنانية: بنت جبيل وبيروت وجبل لبنان والكورة وسواها."
+            }
+        ],
+        "photos": [
+            {
+                "src": "assets/gallery/team-unhcr.webp",
+                "caption": {
+                    "en": "With UNHCR partners, Bint Jbeil",
+                    "ar": "مع شركاء مفوضية اللاجئين، بنت جبيل"
+                }
+            },
+            {
+                "src": "assets/gallery/women-english-event.webp",
+                "caption": {
+                    "en": "Teaching Women English program",
+                    "ar": "برنامج تعليم الإنكليزية للنساء"
+                }
+            },
+            {
+                "src": "assets/gallery/computer-lab-1.webp",
+                "caption": {
+                    "en": "The computer center",
+                    "ar": "مركز الكمبيوتر"
+                }
+            }
+        ]
+    },
+    "timeline": [
+        {
+            "year": "2004",
+            "title": {
+                "en": "The club",
+                "ar": "النادي"
+            },
+            "body": {
+                "en": "The Lebanese Sports Club is established in Bint Jbeil. Energy, discipline and belonging for the town's youth.",
+                "ar": "تأسيس النادي الرياضي اللبناني في بنت جبيل: طاقة وانضباط وانتماء لشباب البلدة."
+            },
+            "image": "assets/gallery/youth-camp.webp"
+        },
+        {
+            "year": "2006",
+            "title": {
+                "en": "The center",
+                "ar": "المركز"
+            },
+            "body": {
+                "en": "A center for computers and English opens with the Development Agency. Skills that opened doors.",
+                "ar": "افتتاح مركز لتعليم الكمبيوتر والإنكليزية بالتعاون مع وكالة التنمية: مهارات فتحت الأبواب."
+            },
+            "image": "assets/gallery/computer-lab-2.webp"
+        },
+        {
+            "year": "2008",
+            "title": {
+                "en": "One hundred",
+                "ar": "مئة"
+            },
+            "body": {
+                "en": "With OTI and USAID, nearly 100 young people train in youth, health, environmental, social and sports awareness.",
+                "ar": "بدعم من OTI وUSAID، تدرّب نحو مئة شابة وشاب على التوعية الشبابية والصحية والبيئية والاجتماعية والرياضية."
+            },
+            "image": "assets/gallery/women-group.webp"
+        },
+        {
+            "year": "2009",
+            "title": {
+                "en": "School of Life",
+                "ar": "مدرسة الحياة"
+            },
+            "body": {
+                "en": "Nursing courses begin. The Lebanese Vocational School of Life takes shape.",
+                "ar": "انطلاق دورات التمريض، وتبلور المدرسة اللبنانية المهنية للحياة."
+            },
+            "image": "assets/gallery/clinic-group.webp"
+        },
+        {
+            "year": "2011",
+            "title": {
+                "en": "Human's Duty",
+                "ar": "واجب البشر"
+            },
+            "body": {
+                "en": "Human's Duty is founded on 27 September under notification no. 137.",
+                "ar": "تأسيس جمعية «واجب البشر» في 27 أيلول بموجب علم وخبر رقم 137."
+            },
+            "image": "assets/gallery/celebration.webp"
+        },
+        {
+            "year": "2020",
+            "title": {
+                "en": "The hard years",
+                "ar": "السنوات الصعبة"
+            },
+            "body": {
+                "en": "Our nurses join the fight against COVID-19. After the Beirut port explosion we bring shelter and food to the hardest hit. Courses move online.",
+                "ar": "ممرضاتنا وممرضونا في الصفوف الأمامية بوجه كوفيد-19. بعد انفجار مرفأ بيروت وفّرنا المأوى والغذاء للأكثر تضرراً، ونقلنا دوراتنا إلى الإنترنت."
+            },
+            "image": "assets/gallery/vaccination.webp"
+        },
+        {
+            "year": "2024",
+            "title": {
+                "en": "The war",
+                "ar": "الحرب"
+            },
+            "body": {
+                "en": "War reaches Bint Jbeil. Our center is destroyed.",
+                "ar": "الحرب تصل إلى بنت جبيل. دُمِّر مركزنا."
+            },
+            "image": "assets/img/memorial.webp"
+        },
+        {
+            "year": "2026",
+            "title": {
+                "en": "We rise",
+                "ar": "ننهض"
+            },
+            "body": {
+                "en": "We rebuild. The duty continues.",
+                "ar": "نُعيد البناء، والواجب مستمر."
+            },
+            "image": "assets/gallery/rafid-school.webp"
+        }
     ],
-    "cta_story": {
-      "en": "Our story",
-      "ar": "قصّتنا"
+    "memorial": {
+        "line1": {
+            "en": "Our center was destroyed.",
+            "ar": "دُمِّر مركزنا."
+        },
+        "line2": {
+            "en": "Our duty was not.",
+            "ar": "أمّا واجبنا فلم يُدمَّر."
+        },
+        "body": {
+            "en": "In the war of 2024, our home in Bint Jbeil, Saf El Hawa, was reduced to rubble. Everything we teach survived: in the people who learned it.",
+            "ar": "في حرب 2024، تحوّل بيتنا في بنت جبيل، صف الهوا، إلى ركام. لكن كلّ ما علّمناه نجا: في الناس الذين تعلّموه."
+        },
+        "image": "assets/img/memorial.webp"
     },
-    "cta_donate": {
-      "en": "Donate",
-      "ar": "تبرّع"
-    }
-  },
-  "about": {
-    "heading": {
-      "en": "A duty carried since 2004",
-      "ar": "واجبٌ نحمله منذ 2004"
+    "pillars_heading": {
+        "en": "What we do",
+        "ar": "ما نقوم به"
     },
-    "paragraphs": [
-      {
-        "en": "Human's Duty is a Lebanese NGO and non-profit, founded on 27 September 2011 under Interior Ministry notification no. 137. Its roots reach back to the Lebanese Sports Club of Bint Jbeil, established in 2004.",
-        "ar": "«واجب البشر» جمعية لبنانية غير حكومية لا تبغى الربح، تأسست في 27 أيلول 2011 بموجب علم وخبر رقم 137 صادر عن وزارة الداخلية اللبنانية. تمتد جذورها إلى النادي الرياضي اللبناني في بنت جبيل، الذي تأسس عام 2004."
-      },
-      {
-        "en": "In 2006 we opened a center teaching computers and English. Over two consecutive years, with OTI support funded by USAID, nearly one hundred young women and men trained in youth, environmental, health, social and sports awareness. Freed from dependency and sectarian intolerance, they became the conscious, independent generation of the Bint Jbeil region.",
-        "ar": "في عام 2006 افتتحنا، بمساعدة وكالة التنمية، مركزاً لتعليم الكمبيوتر واللغة الإنكليزية. وعلى مدى عامين متتاليين، وبدعم من منظمة OTI بتمويل من USAID، تدرّب نحو مئة شابة وشاب على التوعية الشبابية والبيئية والصحية والاجتماعية والرياضية، فتحرروا من التبعية والتعصب الطائفي، وشكّلوا الجيل الواعي المستقل في منطقة بنت جبيل."
-      },
-      {
-        "en": "From those seeds grew the Lebanese Vocational School of Life, and in 2011, Human's Duty. Our work continues across Lebanon: Bint Jbeil, Beirut, Mount Lebanon, Koura and beyond.",
-        "ar": "من تلك البذور نشأت المدرسة اللبنانية المهنية للحياة، ثم جمعية «واجب البشر» عام 2011. ويستمر عملنا في مختلف المناطق اللبنانية: بنت جبيل وبيروت وجبل لبنان والكورة وسواها."
-      }
+    "pillars": [
+        {
+            "icon": "coop",
+            "title": {
+                "en": "Work and cooperatives",
+                "ar": "العمل والتعاونيات"
+            },
+            "body": {
+                "en": "Job opportunities through cooperatives, vocational programs and professional training.",
+                "ar": "فرص عمل عبر التعاونيات والبرامج المهنية والتدريب الاحترافي."
+            },
+            "image": "assets/gallery/pastry-team.webp"
+        },
+        {
+            "icon": "health",
+            "title": {
+                "en": "Health and environment",
+                "ar": "الصحة والبيئة"
+            },
+            "body": {
+                "en": "Clinics, nursing homes, prevention and care. Environmental action for eco-tourism and against global warming.",
+                "ar": "عيادات ودور تمريض ووقاية ورعاية، وعمل بيئي لتشجيع السياحة البيئية ومواجهة الاحتباس الحراري."
+            },
+            "image": "assets/gallery/clinic-group.webp"
+        },
+        {
+            "icon": "heritage",
+            "title": {
+                "en": "Heritage and ruins",
+                "ar": "التراث والآثار"
+            },
+            "body": {
+                "en": "Protecting monuments and turning them into national landmarks through awareness and specialized programs.",
+                "ar": "حماية الآثار وصونها وتحويلها إلى معالم وطنية عبر التوعية والبرامج المتخصصة."
+            },
+            "image": "assets/gallery/gazebo-elders.webp"
+        },
+        {
+            "icon": "social",
+            "title": {
+                "en": "Social interaction",
+                "ar": "التفاعل الاجتماعي"
+            },
+            "body": {
+                "en": "Festivals, exchange visits and programs of justice, equality, citizenship and public freedoms.",
+                "ar": "مهرجانات وزيارات تبادل وبرامج للعدالة والمساواة والمواطنة والحريات العامة."
+            },
+            "image": "assets/gallery/celebration.webp"
+        },
+        {
+            "icon": "education",
+            "title": {
+                "en": "Education and culture",
+                "ar": "التربية والثقافة"
+            },
+            "body": {
+                "en": "Fighting illiteracy and ignorance: schools, nurseries, women's leadership, protection for children and the elderly.",
+                "ar": "محاربة الأمية والجهل: مدارس وحضانات ودعم قيادة المرأة وحماية الطفل والمسنّ."
+            },
+            "image": "assets/gallery/classroom-adults.webp"
+        },
+        {
+            "icon": "relief",
+            "title": {
+                "en": "Relief",
+                "ar": "الإغاثة"
+            },
+            "body": {
+                "en": "Material, moral and food aid to whoever needs it, and real answers to social problems.",
+                "ar": "مساعدات مادية ومعنوية وغذائية لمن يحتاجها، وحلول فعلية للمشاكل الاجتماعية."
+            },
+            "image": "assets/gallery/gift-distribution.webp"
+        }
     ],
-    "photos": [
-      {
-        "src": "assets/gallery/team-unhcr.webp",
-        "caption": {
-          "en": "With UNHCR partners, Bint Jbeil",
-          "ar": "مع شركاء مفوضية اللاجئين، بنت جبيل"
+    "projects_heading": {
+        "en": "Our projects",
+        "ar": "مشاريعنا"
+    },
+    "projects_intro": {
+        "en": "Awareness first. Through vocational courses and direct support, we help people build a better future, especially those facing financial hardship.",
+        "ar": "الوعي أولاً. عبر الدورات المهنية والدعم المباشر، نساعد الناس على بناء مستقبل أفضل، وخصوصاً من يواجهون ضائقة مالية."
+    },
+    "projects": [
+        {
+            "id": "nursing",
+            "title": {
+                "en": "Nursing",
+                "ar": "التمريض"
+            },
+            "desc": {
+                "en": "Nursing courses since 2009. Our graduates serve in Lebanon and abroad.",
+                "ar": "دورات تمريض منذ عام 2009. خرّيجونا يخدمون في لبنان والخارج."
+            },
+            "image": "assets/gallery/nursing-iv.webp",
+            "tag": {
+                "en": "Health",
+                "ar": "صحة"
+            }
+        },
+        {
+            "id": "advocacy",
+            "title": {
+                "en": "Advocacy",
+                "ar": "التوعية والمناصرة"
+            },
+            "desc": {
+                "en": "Women's support, driving, ethics, behavior, cleanliness, waste and more.",
+                "ar": "دعم المرأة، والقيادة، والأخلاقيات، والسلوك، والنظافة، والنفايات وغيرها."
+            },
+            "image": "assets/gallery/women-awareness.webp",
+            "tag": {
+                "en": "Community",
+                "ar": "مجتمع"
+            }
+        },
+        {
+            "id": "traditions",
+            "title": {
+                "en": "Reviving traditions",
+                "ar": "إحياء التقاليد"
+            },
+            "desc": {
+                "en": "Tradition and sports that absorb energy and turn it into positive momentum.",
+                "ar": "تقاليد ورياضة تمتصّ الطاقة وتحوّلها إلى دفعٍ إيجابي."
+            },
+            "image": "assets/gallery/mouneh-jars.webp",
+            "tag": {
+                "en": "Culture",
+                "ar": "ثقافة"
+            }
+        },
+        {
+            "id": "agriculture",
+            "title": {
+                "en": "Agriculture and farms",
+                "ar": "الزراعة والمزارع"
+            },
+            "desc": {
+                "en": "Training in the art of agriculture and animal farm management, from Bint Jbeil to all regions.",
+                "ar": "تدريب على فنّ الزراعة وإدارة مزارع الحيوانات، من بنت جبيل إلى كل المناطق."
+            },
+            "image": "assets/gallery/pomegranates.webp",
+            "tag": {
+                "en": "Livelihoods",
+                "ar": "سبل عيش"
+            }
+        },
+        {
+            "id": "teaching",
+            "title": {
+                "en": "Teaching",
+                "ar": "التعليم"
+            },
+            "desc": {
+                "en": "Languages and skills for youth.",
+                "ar": "لغات ومهارات للشباب."
+            },
+            "image": "assets/gallery/classroom-youth.webp",
+            "tag": {
+                "en": "Education",
+                "ar": "تعليم"
+            }
+        },
+        {
+            "id": "medicine",
+            "title": {
+                "en": "Free medicine",
+                "ar": "الطبابة المجانية"
+            },
+            "desc": {
+                "en": "Free medicine and medical examinations for those in need.",
+                "ar": "أدوية وفحوصات طبية مجانية لمن يحتاج."
+            },
+            "image": "assets/gallery/elder-checkup.webp",
+            "tag": {
+                "en": "Health",
+                "ar": "صحة"
+            }
+        },
+        {
+            "id": "firstaid",
+            "title": {
+                "en": "First aid awareness",
+                "ar": "الإسعافات الأولية"
+            },
+            "desc": {
+                "en": "Free first aid courses for the community.",
+                "ar": "دورات إسعافات أولية مجانية للمجتمع."
+            },
+            "image": "assets/gallery/cpr-training.webp",
+            "tag": {
+                "en": "Health",
+                "ar": "صحة"
+            }
+        },
+        {
+            "id": "workers",
+            "title": {
+                "en": "Supporting foreign workers",
+                "ar": "دعم العمال الأجانب"
+            },
+            "desc": {
+                "en": "Regular events and initiatives building a strong support network for workers living under stress and abuse.",
+                "ar": "أنشطة ومبادرات منتظمة لبناء شبكة دعم قوية لعمالٍ يعيشون تحت الضغط وسوء المعاملة."
+            },
+            "image": "assets/gallery/community-shed.webp",
+            "tag": {
+                "en": "Community",
+                "ar": "مجتمع"
+            }
+        },
+        {
+            "id": "women",
+            "title": {
+                "en": "Stop violence against women",
+                "ar": "وقف العنف ضد المرأة"
+            },
+            "desc": {
+                "en": "With USPEAK, our students launched an initiative to protect women from violence.",
+                "ar": "بالتعاون مع USPEAK، أطلق طلابنا مبادرة لحماية النساء من العنف."
+            },
+            "image": "assets/gallery/girls-assembly.webp",
+            "tag": {
+                "en": "Community",
+                "ar": "مجتمع"
+            }
+        },
+        {
+            "id": "beirut",
+            "title": {
+                "en": "Beirut port explosion",
+                "ar": "انفجار مرفأ بيروت"
+            },
+            "desc": {
+                "en": "Shelter and food support for those hit hardest after the explosion.",
+                "ar": "مأوى ودعم غذائي لمن تضرروا بعد الانفجار."
+            },
+            "image": "",
+            "tag": {
+                "en": "Relief",
+                "ar": "إغاثة"
+            }
+        },
+        {
+            "id": "covid",
+            "title": {
+                "en": "Fighting COVID-19",
+                "ar": "مواجهة كوفيد-19"
+            },
+            "desc": {
+                "en": "Our nursing students joined Lebanon's medical forces, and many carried the fight abroad.",
+                "ar": "انضم طلاب التمريض لدينا إلى الطواقم الطبية في لبنان، وحمل كثيرون منهم المهمة إلى الخارج."
+            },
+            "image": "assets/gallery/pediatric-care.webp",
+            "tag": {
+                "en": "Health",
+                "ar": "صحة"
+            }
+        },
+        {
+            "id": "online",
+            "title": {
+                "en": "Online courses",
+                "ar": "دورات عبر الإنترنت"
+            },
+            "desc": {
+                "en": "Through the lockdowns, support and courses continued online for everyone with a computer.",
+                "ar": "خلال الإقفال العام، استمر الدعم والدورات عبر الإنترنت لكل من يملك حاسوباً."
+            },
+            "image": "assets/gallery/online-lab.webp",
+            "tag": {
+                "en": "Education",
+                "ar": "تعليم"
+            }
         }
-      },
-      {
-        "src": "assets/gallery/women-english-event.webp",
-        "caption": {
-          "en": "Teaching Women English program",
-          "ar": "برنامج تعليم الإنكليزية للنساء"
+    ],
+    "gallery_heading": {
+        "en": "Moments from the field",
+        "ar": "لحظات من الميدان"
+    },
+    "gallery": [
+        {
+            "src": "assets/gallery/baking-class.webp",
+            "caption": {
+                "en": "Pastry training, the vocational kitchen",
+                "ar": "تدريب على صناعة المعجنات في المطبخ المهني"
+            }
+        },
+        {
+            "src": "assets/gallery/pastry-team.webp",
+            "caption": {
+                "en": "The baking class with their trainer",
+                "ar": "صف الأفران مع المدرّب"
+            }
+        },
+        {
+            "src": "assets/gallery/mouneh-jars.webp",
+            "caption": {
+                "en": "Mouneh: preserving the season",
+                "ar": "المونة: خزين الموسم"
+            }
+        },
+        {
+            "src": "assets/gallery/pomegranates.webp",
+            "caption": {
+                "en": "Sorting the harvest",
+                "ar": "فرز الموسم"
+            }
+        },
+        {
+            "src": "assets/gallery/clinic-group.webp",
+            "caption": {
+                "en": "Nursing students on the ward",
+                "ar": "طلاب التمريض في الجناح"
+            }
+        },
+        {
+            "src": "assets/gallery/cpr-training.webp",
+            "caption": {
+                "en": "First aid: CPR practice",
+                "ar": "إسعافات أولية: تدريب على الإنعاش"
+            }
+        },
+        {
+            "src": "assets/gallery/elder-checkup.webp",
+            "caption": {
+                "en": "Free checkups for our elders",
+                "ar": "فحوصات مجانية لكبارنا"
+            }
+        },
+        {
+            "src": "assets/gallery/pediatric-care.webp",
+            "caption": {
+                "en": "On the children's ward",
+                "ar": "في جناح الأطفال"
+            }
+        },
+        {
+            "src": "assets/gallery/vaccination.webp",
+            "caption": {
+                "en": "The COVID-19 years",
+                "ar": "سنوات كوفيد-19"
+            }
+        },
+        {
+            "src": "assets/gallery/mechanics-team.webp",
+            "caption": {
+                "en": "Car mechanics course",
+                "ar": "دورة ميكانيك السيارات"
+            }
+        },
+        {
+            "src": "assets/gallery/women-awareness.webp",
+            "caption": {
+                "en": "Women's awareness session",
+                "ar": "جلسة توعية نسائية"
+            }
+        },
+        {
+            "src": "assets/gallery/students-trio.webp",
+            "caption": {
+                "en": "Course day",
+                "ar": "يوم الدورة"
+            }
+        },
+        {
+            "src": "assets/gallery/gift-distribution.webp",
+            "caption": {
+                "en": "Gifts for the little ones",
+                "ar": "هدايا للصغار"
+            }
+        },
+        {
+            "src": "assets/gallery/celebration.webp",
+            "caption": {
+                "en": "Graduation day",
+                "ar": "يوم التخرج"
+            }
+        },
+        {
+            "src": "assets/gallery/honoree-crowd.webp",
+            "caption": {
+                "en": "Honoring the strongest among us",
+                "ar": "تكريم الأقوى بيننا"
+            }
+        },
+        {
+            "src": "assets/gallery/trainers-workshop.webp",
+            "caption": {
+                "en": "Training of trainers",
+                "ar": "تدريب المدرّبين"
+            }
+        },
+        {
+            "src": "assets/gallery/hist-ceremony.webp",
+            "caption": {
+                "en": "An early honouring ceremony",
+                "ar": "حفل تكريم في السنوات الأولى"
+            }
+        },
+        {
+            "src": "assets/gallery/hist-bread.webp",
+            "caption": {
+                "en": "Baking day at the old center",
+                "ar": "يوم الخبز في المركز القديم"
+            }
+        },
+        {
+            "src": "assets/gallery/hist-classroom.webp",
+            "caption": {
+                "en": "A full classroom, Bint Jbeil",
+                "ar": "صف ممتلئ، بنت جبيل"
+            }
+        },
+        {
+            "src": "assets/gallery/hist-nurses-cedar.webp",
+            "caption": {
+                "en": "Nursing students on a field visit",
+                "ar": "طلاب التمريض في زيارة ميدانية"
+            }
+        },
+        {
+            "src": "assets/gallery/hist-hall.webp",
+            "caption": {
+                "en": "A community meeting",
+                "ar": "لقاء أهلي"
+            }
+        },
+        {
+            "src": "assets/gallery/hist-lecture.webp",
+            "caption": {
+                "en": "An awareness lecture",
+                "ar": "محاضرة توعية"
+            }
+        },
+        {
+            "src": "assets/gallery/hist-audience.webp",
+            "caption": {
+                "en": "The audience of a public event",
+                "ar": "جمهور نشاط عام"
+            }
+        },
+        {
+            "src": "assets/gallery/hist-strength.webp",
+            "caption": {
+                "en": "Sports day, absorbing the energy of youth",
+                "ar": "يوم رياضي يمتصّ طاقة الشباب"
+            }
+        },
+        {
+            "src": "assets/gallery/children-group.webp",
+            "caption": {
+                "en": "The children of the neighbourhood",
+                "ar": "أطفال الحي"
+            }
+        },
+        {
+            "src": "assets/gallery/certificates.webp",
+            "caption": {
+                "en": "Graduation certificates in hand",
+                "ar": "شهادات التخرج في الأيدي"
+            }
+        },
+        {
+            "src": "assets/gallery/assembly-hall.webp",
+            "caption": {
+                "en": "A packed assembly",
+                "ar": "قاعة ممتلئة"
+            }
+        },
+        {
+            "src": "assets/gallery/assembly-women.webp",
+            "caption": {
+                "en": "Women of the association together",
+                "ar": "نساء الجمعية معاً"
+            }
         }
-      },
-      {
-        "src": "assets/gallery/computer-lab-1.webp",
-        "caption": {
-          "en": "The computer center",
-          "ar": "مركز الكمبيوتر"
+    ],
+    "donation": {
+        "heading": {
+            "en": "Help us rise again",
+            "ar": "ساعدونا على النهوض من جديد"
+        },
+        "body": {
+            "en": "We welcome financial and in-kind donations from friends in Lebanon and abroad: institutions, humanitarian and professional organizations. Every donation follows full legal procedure, with management, accountability, and a direct link between the donor and the path of their gift.",
+            "ar": "نفتح باب التبرعات المالية والعينية لجميع الأصدقاء في لبنان والخارج، من مؤسسات ومنظمات إنسانية ومهنية. يخضع كل تبرع للأصول القانونية الكاملة، إدارةً ومساءلة، مع ربط المتبرع مباشرةً بمسار تبرعه."
+        },
+        "programs_heading": {
+            "en": "Programs open for support",
+            "ar": "برامج مفتوحة للدعم"
+        },
+        "programs": [
+            {
+                "en": "Cooperative projects with Lebanese associations and vocational centers",
+                "ar": "مشاريع تعاونية مع جمعيات لبنانية ومراكز مهنية"
+            },
+            {
+                "en": "Courses in agriculture and animal farm management",
+                "ar": "دورات في فنّ الزراعة وإدارة مزارع الحيوانات"
+            },
+            {
+                "en": "Technical, health and nutritional guidance for beef and poultry breeders",
+                "ar": "إرشاد تقني وصحي وغذائي لمربّي الأبقار والدواجن"
+            },
+            {
+                "en": "Vocational training courses required by the labor market",
+                "ar": "دورات تدريب مهني يطلبها سوق العمل"
+            },
+            {
+                "en": "A mobile medical team providing free examinations",
+                "ar": "فريق طبي جوّال يقدّم فحوصات مجانية"
+            },
+            {
+                "en": "Equipping a dispensary",
+                "ar": "تجهيز مستوصف"
+            },
+            {
+                "en": "Emergency treatment for the sick and the poor",
+                "ar": "علاج طارئ للمرضى والفقراء"
+            },
+            {
+                "en": "Laying hens for rural families, with training in care",
+                "ar": "دجاج بيّاض لعائلات الأرياف مع تدريب على العناية"
+            },
+            {
+                "en": "Training of trainers: firefighting, forest protection, safety nets",
+                "ar": "تدريب مدرّبين: إطفاء الحرائق وحماية الأحراج وشبكات السلامة"
+            },
+            {
+                "en": "Training of trainers: managing associations, accountability and organization",
+                "ar": "تدريب مدرّبين: إدارة الجمعيات والمساءلة والتنظيم"
+            },
+            {
+                "en": "Agricultural nurseries, green fodder and organic fertilizers",
+                "ar": "مشاتل زراعية وأعلاف خضراء وأسمدة عضوية"
+            },
+            {
+                "en": "Examinations and PCR tests in family care clinics: Beirut (Basta), Mount Lebanon (Laylaki), South (Aba)",
+                "ar": "فحوصات واختبارات PCR في عيادات الرعاية الأسرية: بيروت (البسطة)، جبل لبنان (الليلكي)، الجنوب (عبا)"
+            }
+        ],
+        "bank_heading": {
+            "en": "Bank transfer",
+            "ar": "التحويل المصرفي"
+        },
+        "bank": [
+            {
+                "label": {
+                    "en": "Bank",
+                    "ar": "المصرف"
+                },
+                "value": "BYBLOS BANK",
+                "copy": true
+            },
+            {
+                "label": {
+                    "en": "Branch",
+                    "ar": "الفرع"
+                },
+                "value": "BINT JBEIL BRANCH",
+                "copy": true
+            },
+            {
+                "label": {
+                    "en": "Country",
+                    "ar": "البلد"
+                },
+                "value": "LEBANON",
+                "copy": true
+            },
+            {
+                "label": {
+                    "en": "SWIFT",
+                    "ar": "SWIFT"
+                },
+                "value": "BYBALBBX",
+                "copy": true
+            },
+            {
+                "label": {
+                    "en": "Beneficiary",
+                    "ar": "المستفيد"
+                },
+                "value": "HUMAN'S DUTY",
+                "copy": true
+            },
+            {
+                "label": {
+                    "en": "Account no.",
+                    "ar": "رقم الحساب"
+                },
+                "value": "4802263380003",
+                "copy": true
+            },
+            {
+                "label": {
+                    "en": "IBAN",
+                    "ar": "IBAN"
+                },
+                "value": "LB900039000000048022633800",
+                "copy": true
+            },
+            {
+                "label": {
+                    "en": "Currency",
+                    "ar": "العملة"
+                },
+                "value": "USD",
+                "copy": true
+            },
+            {
+                "label": {
+                    "en": "Tel",
+                    "ar": "هاتف"
+                },
+                "value": "+961 7 450 601",
+                "copy": false
+            },
+            {
+                "label": {
+                    "en": "Fax",
+                    "ar": "فاكس"
+                },
+                "value": "+961 7 450 604",
+                "copy": false
+            }
+        ]
+    },
+    "contact": {
+        "heading": {
+            "en": "Contact us",
+            "ar": "تواصلوا معنا"
+        },
+        "phones": [
+            "+961 70 113 081",
+            "+961 1 274 172"
+        ],
+        "emails": [
+            "humansduty@gmail.com",
+            "info@humansduty.org"
+        ],
+        "addresses": [
+            {
+                "en": "Bint Jbeil, Saf El Hawa, Lebanon",
+                "ar": "بنت جبيل، صف الهوا، لبنان"
+            },
+            {
+                "en": "Beirut, Ain El Remmaneh",
+                "ar": "بيروت، عين الرمانة"
+            }
+        ]
+    },
+    "center": {
+        "eyebrow": {
+            "en": "Bint Jbeil, Saf El Hawa",
+            "ar": "بنت جبيل، صف الهوا"
+        },
+        "heading": {
+            "en": "Bricks may fall, but knowledge stands tall.",
+            "ar": "قد يسقط الحجر، لكنّ المعرفة تبقى واقفة."
+        },
+        "body": {
+            "en": "This was our center. The banners on the wall announced free courses. The pots on the steps were watered every morning. Drag the handle to see what the war of 2024 left of it.",
+            "ar": "هذا كان مركزنا. اللافتات على الجدار تُعلن عن دورات مجانية. أصص الزهور على الدرج كانت تُسقى كل صباح. اسحب المقبض لترى ما تركته حرب 2024 منه."
+        },
+        "label_before": {
+            "en": "Before",
+            "ar": "قبل"
+        },
+        "label_after": {
+            "en": "After",
+            "ar": "بعد"
+        },
+        "hint": {
+            "en": "Drag to reveal",
+            "ar": "اسحب للكشف"
+        },
+        "views": [
+            {
+                "id": "street",
+                "name": {
+                    "en": "From the street",
+                    "ar": "من الشارع"
+                },
+                "before": "assets/img/center/center-before-wide.webp",
+                "after": "assets/img/center/center-after-wide.webp",
+                "note": {
+                    "en": "The whole building, from the road that brought every student to the door.",
+                    "ar": "المبنى كاملاً، من الطريق التي أوصلت كل طالب إلى الباب."
+                }
+            },
+            {
+                "id": "steps",
+                "name": {
+                    "en": "The entrance steps",
+                    "ar": "درج المدخل"
+                },
+                "before": "assets/img/center/center-before-steps.webp",
+                "after": "assets/img/center/center-after-steps.webp",
+                "note": {
+                    "en": "The same stairs, the same flower pots, the same iron railing.",
+                    "ar": "الدرج نفسه، وأصص الزهور نفسها، والدرابزين الحديدي نفسه."
+                }
+            }
+        ],
+        "rebuild": {
+            "image": "assets/img/center/center-rebuild.webp",
+            "caption": {
+                "en": "And we build again.",
+                "ar": "ونبني من جديد."
+            }
         }
-      }
+    },
+    "videos_heading": {
+        "en": "Watch our work",
+        "ar": "شاهدوا عملنا"
+    },
+    "videos": [
+        {
+            "id": "7haJmXYvtdA",
+            "title": {
+                "en": "Activities of Human's Duty Association",
+                "ar": "أنشطة جمعية واجب البشر"
+            },
+            "thumb": "assets/video/thumbs/7haJmXYvtdA.webp"
+        },
+        {
+            "id": "Jmxc8AFLjgA",
+            "title": {
+                "en": "Human's Duty: Dearborn report",
+                "ar": "واجب البشر: تقرير ديربورن"
+            },
+            "thumb": "assets/video/thumbs/Jmxc8AFLjgA.webp"
+        }
     ]
-  },
-  "timeline": [
-    {
-      "year": "2004",
-      "title": {
-        "en": "The club",
-        "ar": "النادي"
-      },
-      "body": {
-        "en": "The Lebanese Sports Club is established in Bint Jbeil. Energy, discipline and belonging for the town's youth.",
-        "ar": "تأسيس النادي الرياضي اللبناني في بنت جبيل: طاقة وانضباط وانتماء لشباب البلدة."
-      },
-      "image": "assets/gallery/youth-camp.webp"
-    },
-    {
-      "year": "2006",
-      "title": {
-        "en": "The center",
-        "ar": "المركز"
-      },
-      "body": {
-        "en": "A center for computers and English opens with the Development Agency. Skills that opened doors.",
-        "ar": "افتتاح مركز لتعليم الكمبيوتر والإنكليزية بالتعاون مع وكالة التنمية: مهارات فتحت الأبواب."
-      },
-      "image": "assets/gallery/computer-lab-2.webp"
-    },
-    {
-      "year": "2008",
-      "title": {
-        "en": "One hundred",
-        "ar": "مئة"
-      },
-      "body": {
-        "en": "With OTI and USAID, nearly 100 young people train in youth, health, environmental, social and sports awareness.",
-        "ar": "بدعم من OTI وUSAID، تدرّب نحو مئة شابة وشاب على التوعية الشبابية والصحية والبيئية والاجتماعية والرياضية."
-      },
-      "image": "assets/gallery/women-group.webp"
-    },
-    {
-      "year": "2009",
-      "title": {
-        "en": "School of Life",
-        "ar": "مدرسة الحياة"
-      },
-      "body": {
-        "en": "Nursing courses begin. The Lebanese Vocational School of Life takes shape.",
-        "ar": "انطلاق دورات التمريض، وتبلور المدرسة اللبنانية المهنية للحياة."
-      },
-      "image": "assets/gallery/clinic-group.webp"
-    },
-    {
-      "year": "2011",
-      "title": {
-        "en": "Human's Duty",
-        "ar": "واجب البشر"
-      },
-      "body": {
-        "en": "Human's Duty is founded on 27 September under notification no. 137.",
-        "ar": "تأسيس جمعية «واجب البشر» في 27 أيلول بموجب علم وخبر رقم 137."
-      },
-      "image": "assets/gallery/celebration.webp"
-    },
-    {
-      "year": "2020",
-      "title": {
-        "en": "The hard years",
-        "ar": "السنوات الصعبة"
-      },
-      "body": {
-        "en": "Our nurses join the fight against COVID-19. After the Beirut port explosion we bring shelter and food to the hardest hit. Courses move online.",
-        "ar": "ممرضاتنا وممرضونا في الصفوف الأمامية بوجه كوفيد-19. بعد انفجار مرفأ بيروت وفّرنا المأوى والغذاء للأكثر تضرراً، ونقلنا دوراتنا إلى الإنترنت."
-      },
-      "image": "assets/gallery/vaccination.webp"
-    },
-    {
-      "year": "2024",
-      "title": {
-        "en": "The war",
-        "ar": "الحرب"
-      },
-      "body": {
-        "en": "War reaches Bint Jbeil. Our center is destroyed.",
-        "ar": "الحرب تصل إلى بنت جبيل. دُمِّر مركزنا."
-      },
-      "image": "assets/img/memorial.webp"
-    },
-    {
-      "year": "2026",
-      "title": {
-        "en": "We rise",
-        "ar": "ننهض"
-      },
-      "body": {
-        "en": "We rebuild. The duty continues.",
-        "ar": "نُعيد البناء، والواجب مستمر."
-      },
-      "image": "assets/gallery/rafid-school.webp"
-    }
-  ],
-  "memorial": {
-    "line1": {
-      "en": "Our center was destroyed.",
-      "ar": "دُمِّر مركزنا."
-    },
-    "line2": {
-      "en": "Our duty was not.",
-      "ar": "أمّا واجبنا فلم يُدمَّر."
-    },
-    "body": {
-      "en": "In the war of 2024, our home in Bint Jbeil, Saf El Hawa, was reduced to rubble. Everything we teach survived: in the people who learned it.",
-      "ar": "في حرب 2024، تحوّل بيتنا في بنت جبيل، صف الهوا، إلى ركام. لكن كلّ ما علّمناه نجا: في الناس الذين تعلّموه."
-    },
-    "image": "assets/img/memorial.webp"
-  },
-  "pillars_heading": {
-    "en": "What we do",
-    "ar": "ما نقوم به"
-  },
-  "pillars": [
-    {
-      "icon": "coop",
-      "title": {
-        "en": "Work and cooperatives",
-        "ar": "العمل والتعاونيات"
-      },
-      "body": {
-        "en": "Job opportunities through cooperatives, vocational programs and professional training.",
-        "ar": "فرص عمل عبر التعاونيات والبرامج المهنية والتدريب الاحترافي."
-      },
-      "image": "assets/gallery/pastry-team.webp"
-    },
-    {
-      "icon": "health",
-      "title": {
-        "en": "Health and environment",
-        "ar": "الصحة والبيئة"
-      },
-      "body": {
-        "en": "Clinics, nursing homes, prevention and care. Environmental action for eco-tourism and against global warming.",
-        "ar": "عيادات ودور تمريض ووقاية ورعاية، وعمل بيئي لتشجيع السياحة البيئية ومواجهة الاحتباس الحراري."
-      },
-      "image": "assets/gallery/clinic-group.webp"
-    },
-    {
-      "icon": "heritage",
-      "title": {
-        "en": "Heritage and ruins",
-        "ar": "التراث والآثار"
-      },
-      "body": {
-        "en": "Protecting monuments and turning them into national landmarks through awareness and specialized programs.",
-        "ar": "حماية الآثار وصونها وتحويلها إلى معالم وطنية عبر التوعية والبرامج المتخصصة."
-      },
-      "image": "assets/gallery/gazebo-elders.webp"
-    },
-    {
-      "icon": "social",
-      "title": {
-        "en": "Social interaction",
-        "ar": "التفاعل الاجتماعي"
-      },
-      "body": {
-        "en": "Festivals, exchange visits and programs of justice, equality, citizenship and public freedoms.",
-        "ar": "مهرجانات وزيارات تبادل وبرامج للعدالة والمساواة والمواطنة والحريات العامة."
-      },
-      "image": "assets/gallery/celebration.webp"
-    },
-    {
-      "icon": "education",
-      "title": {
-        "en": "Education and culture",
-        "ar": "التربية والثقافة"
-      },
-      "body": {
-        "en": "Fighting illiteracy and ignorance: schools, nurseries, women's leadership, protection for children and the elderly.",
-        "ar": "محاربة الأمية والجهل: مدارس وحضانات ودعم قيادة المرأة وحماية الطفل والمسنّ."
-      },
-      "image": "assets/gallery/classroom-adults.webp"
-    },
-    {
-      "icon": "relief",
-      "title": {
-        "en": "Relief",
-        "ar": "الإغاثة"
-      },
-      "body": {
-        "en": "Material, moral and food aid to whoever needs it, and real answers to social problems.",
-        "ar": "مساعدات مادية ومعنوية وغذائية لمن يحتاجها، وحلول فعلية للمشاكل الاجتماعية."
-      },
-      "image": "assets/gallery/gift-distribution.webp"
-    }
-  ],
-  "projects_heading": {
-    "en": "Our projects",
-    "ar": "مشاريعنا"
-  },
-  "projects_intro": {
-    "en": "Awareness first. Through vocational courses and direct support, we help people build a better future, especially those facing financial hardship.",
-    "ar": "الوعي أولاً. عبر الدورات المهنية والدعم المباشر، نساعد الناس على بناء مستقبل أفضل، وخصوصاً من يواجهون ضائقة مالية."
-  },
-  "projects": [
-    {
-      "id": "nursing",
-      "title": {
-        "en": "Nursing",
-        "ar": "التمريض"
-      },
-      "desc": {
-        "en": "Nursing courses since 2009. Our graduates serve in Lebanon and abroad.",
-        "ar": "دورات تمريض منذ عام 2009. خرّيجونا يخدمون في لبنان والخارج."
-      },
-      "image": "assets/gallery/nursing-iv.webp",
-      "tag": {
-        "en": "Health",
-        "ar": "صحة"
-      }
-    },
-    {
-      "id": "advocacy",
-      "title": {
-        "en": "Advocacy",
-        "ar": "التوعية والمناصرة"
-      },
-      "desc": {
-        "en": "Women's support, driving, ethics, behavior, cleanliness, waste and more.",
-        "ar": "دعم المرأة، والقيادة، والأخلاقيات، والسلوك، والنظافة، والنفايات وغيرها."
-      },
-      "image": "assets/gallery/women-awareness.webp",
-      "tag": {
-        "en": "Community",
-        "ar": "مجتمع"
-      }
-    },
-    {
-      "id": "traditions",
-      "title": {
-        "en": "Reviving traditions",
-        "ar": "إحياء التقاليد"
-      },
-      "desc": {
-        "en": "Tradition and sports that absorb energy and turn it into positive momentum.",
-        "ar": "تقاليد ورياضة تمتصّ الطاقة وتحوّلها إلى دفعٍ إيجابي."
-      },
-      "image": "assets/gallery/mouneh-jars.webp",
-      "tag": {
-        "en": "Culture",
-        "ar": "ثقافة"
-      }
-    },
-    {
-      "id": "agriculture",
-      "title": {
-        "en": "Agriculture and farms",
-        "ar": "الزراعة والمزارع"
-      },
-      "desc": {
-        "en": "Training in the art of agriculture and animal farm management, from Bint Jbeil to all regions.",
-        "ar": "تدريب على فنّ الزراعة وإدارة مزارع الحيوانات، من بنت جبيل إلى كل المناطق."
-      },
-      "image": "assets/gallery/pomegranates.webp",
-      "tag": {
-        "en": "Livelihoods",
-        "ar": "سبل عيش"
-      }
-    },
-    {
-      "id": "teaching",
-      "title": {
-        "en": "Teaching",
-        "ar": "التعليم"
-      },
-      "desc": {
-        "en": "Languages and skills for youth.",
-        "ar": "لغات ومهارات للشباب."
-      },
-      "image": "assets/gallery/classroom-youth.webp",
-      "tag": {
-        "en": "Education",
-        "ar": "تعليم"
-      }
-    },
-    {
-      "id": "medicine",
-      "title": {
-        "en": "Free medicine",
-        "ar": "الطبابة المجانية"
-      },
-      "desc": {
-        "en": "Free medicine and medical examinations for those in need.",
-        "ar": "أدوية وفحوصات طبية مجانية لمن يحتاج."
-      },
-      "image": "assets/gallery/elder-checkup.webp",
-      "tag": {
-        "en": "Health",
-        "ar": "صحة"
-      }
-    },
-    {
-      "id": "firstaid",
-      "title": {
-        "en": "First aid awareness",
-        "ar": "الإسعافات الأولية"
-      },
-      "desc": {
-        "en": "Free first aid courses for the community.",
-        "ar": "دورات إسعافات أولية مجانية للمجتمع."
-      },
-      "image": "assets/gallery/cpr-training.webp",
-      "tag": {
-        "en": "Health",
-        "ar": "صحة"
-      }
-    },
-    {
-      "id": "workers",
-      "title": {
-        "en": "Supporting foreign workers",
-        "ar": "دعم العمال الأجانب"
-      },
-      "desc": {
-        "en": "Regular events and initiatives building a strong support network for workers living under stress and abuse.",
-        "ar": "أنشطة ومبادرات منتظمة لبناء شبكة دعم قوية لعمالٍ يعيشون تحت الضغط وسوء المعاملة."
-      },
-      "image": "assets/gallery/community-shed.webp",
-      "tag": {
-        "en": "Community",
-        "ar": "مجتمع"
-      }
-    },
-    {
-      "id": "women",
-      "title": {
-        "en": "Stop violence against women",
-        "ar": "وقف العنف ضد المرأة"
-      },
-      "desc": {
-        "en": "With USPEAK, our students launched an initiative to protect women from violence.",
-        "ar": "بالتعاون مع USPEAK، أطلق طلابنا مبادرة لحماية النساء من العنف."
-      },
-      "image": "assets/gallery/girls-assembly.webp",
-      "tag": {
-        "en": "Community",
-        "ar": "مجتمع"
-      }
-    },
-    {
-      "id": "beirut",
-      "title": {
-        "en": "Beirut port explosion",
-        "ar": "انفجار مرفأ بيروت"
-      },
-      "desc": {
-        "en": "Shelter and food support for those hit hardest after the explosion.",
-        "ar": "مأوى ودعم غذائي لمن تضرروا بعد الانفجار."
-      },
-      "image": "",
-      "tag": {
-        "en": "Relief",
-        "ar": "إغاثة"
-      }
-    },
-    {
-      "id": "covid",
-      "title": {
-        "en": "Fighting COVID-19",
-        "ar": "مواجهة كوفيد-19"
-      },
-      "desc": {
-        "en": "Our nursing students joined Lebanon's medical forces, and many carried the fight abroad.",
-        "ar": "انضم طلاب التمريض لدينا إلى الطواقم الطبية في لبنان، وحمل كثيرون منهم المهمة إلى الخارج."
-      },
-      "image": "assets/gallery/pediatric-care.webp",
-      "tag": {
-        "en": "Health",
-        "ar": "صحة"
-      }
-    },
-    {
-      "id": "online",
-      "title": {
-        "en": "Online courses",
-        "ar": "دورات عبر الإنترنت"
-      },
-      "desc": {
-        "en": "Through the lockdowns, support and courses continued online for everyone with a computer.",
-        "ar": "خلال الإقفال العام، استمر الدعم والدورات عبر الإنترنت لكل من يملك حاسوباً."
-      },
-      "image": "assets/gallery/online-lab.webp",
-      "tag": {
-        "en": "Education",
-        "ar": "تعليم"
-      }
-    }
-  ],
-  "gallery_heading": {
-    "en": "Moments from the field",
-    "ar": "لحظات من الميدان"
-  },
-  "gallery": [
-    {
-      "src": "assets/gallery/baking-class.webp",
-      "caption": {
-        "en": "Pastry training, the vocational kitchen",
-        "ar": "تدريب على صناعة المعجنات في المطبخ المهني"
-      }
-    },
-    {
-      "src": "assets/gallery/pastry-team.webp",
-      "caption": {
-        "en": "The baking class with their trainer",
-        "ar": "صف الأفران مع المدرّب"
-      }
-    },
-    {
-      "src": "assets/gallery/mouneh-jars.webp",
-      "caption": {
-        "en": "Mouneh: preserving the season",
-        "ar": "المونة: خزين الموسم"
-      }
-    },
-    {
-      "src": "assets/gallery/pomegranates.webp",
-      "caption": {
-        "en": "Sorting the harvest",
-        "ar": "فرز الموسم"
-      }
-    },
-    {
-      "src": "assets/gallery/clinic-group.webp",
-      "caption": {
-        "en": "Nursing students on the ward",
-        "ar": "طلاب التمريض في الجناح"
-      }
-    },
-    {
-      "src": "assets/gallery/cpr-training.webp",
-      "caption": {
-        "en": "First aid: CPR practice",
-        "ar": "إسعافات أولية: تدريب على الإنعاش"
-      }
-    },
-    {
-      "src": "assets/gallery/elder-checkup.webp",
-      "caption": {
-        "en": "Free checkups for our elders",
-        "ar": "فحوصات مجانية لكبارنا"
-      }
-    },
-    {
-      "src": "assets/gallery/pediatric-care.webp",
-      "caption": {
-        "en": "On the children's ward",
-        "ar": "في جناح الأطفال"
-      }
-    },
-    {
-      "src": "assets/gallery/vaccination.webp",
-      "caption": {
-        "en": "The COVID-19 years",
-        "ar": "سنوات كوفيد-19"
-      }
-    },
-    {
-      "src": "assets/gallery/mechanics-team.webp",
-      "caption": {
-        "en": "Car mechanics course",
-        "ar": "دورة ميكانيك السيارات"
-      }
-    },
-    {
-      "src": "assets/gallery/women-awareness.webp",
-      "caption": {
-        "en": "Women's awareness session",
-        "ar": "جلسة توعية نسائية"
-      }
-    },
-    {
-      "src": "assets/gallery/students-trio.webp",
-      "caption": {
-        "en": "Course day",
-        "ar": "يوم الدورة"
-      }
-    },
-    {
-      "src": "assets/gallery/gift-distribution.webp",
-      "caption": {
-        "en": "Gifts for the little ones",
-        "ar": "هدايا للصغار"
-      }
-    },
-    {
-      "src": "assets/gallery/celebration.webp",
-      "caption": {
-        "en": "Graduation day",
-        "ar": "يوم التخرج"
-      }
-    },
-    {
-      "src": "assets/gallery/honoree-crowd.webp",
-      "caption": {
-        "en": "Honoring the strongest among us",
-        "ar": "تكريم الأقوى بيننا"
-      }
-    },
-    {
-      "src": "assets/gallery/trainers-workshop.webp",
-      "caption": {
-        "en": "Training of trainers",
-        "ar": "تدريب المدرّبين"
-      }
-    }
-  ],
-  "donation": {
-    "heading": {
-      "en": "Help us rise again",
-      "ar": "ساعدونا على النهوض من جديد"
-    },
-    "body": {
-      "en": "We welcome financial and in-kind donations from friends in Lebanon and abroad: institutions, humanitarian and professional organizations. Every donation follows full legal procedure, with management, accountability, and a direct link between the donor and the path of their gift.",
-      "ar": "نفتح باب التبرعات المالية والعينية لجميع الأصدقاء في لبنان والخارج، من مؤسسات ومنظمات إنسانية ومهنية. يخضع كل تبرع للأصول القانونية الكاملة، إدارةً ومساءلة، مع ربط المتبرع مباشرةً بمسار تبرعه."
-    },
-    "programs_heading": {
-      "en": "Programs open for support",
-      "ar": "برامج مفتوحة للدعم"
-    },
-    "programs": [
-      {
-        "en": "Cooperative projects with Lebanese associations and vocational centers",
-        "ar": "مشاريع تعاونية مع جمعيات لبنانية ومراكز مهنية"
-      },
-      {
-        "en": "Courses in agriculture and animal farm management",
-        "ar": "دورات في فنّ الزراعة وإدارة مزارع الحيوانات"
-      },
-      {
-        "en": "Technical, health and nutritional guidance for beef and poultry breeders",
-        "ar": "إرشاد تقني وصحي وغذائي لمربّي الأبقار والدواجن"
-      },
-      {
-        "en": "Vocational training courses required by the labor market",
-        "ar": "دورات تدريب مهني يطلبها سوق العمل"
-      },
-      {
-        "en": "A mobile medical team providing free examinations",
-        "ar": "فريق طبي جوّال يقدّم فحوصات مجانية"
-      },
-      {
-        "en": "Equipping a dispensary",
-        "ar": "تجهيز مستوصف"
-      },
-      {
-        "en": "Emergency treatment for the sick and the poor",
-        "ar": "علاج طارئ للمرضى والفقراء"
-      },
-      {
-        "en": "Laying hens for rural families, with training in care",
-        "ar": "دجاج بيّاض لعائلات الأرياف مع تدريب على العناية"
-      },
-      {
-        "en": "Training of trainers: firefighting, forest protection, safety nets",
-        "ar": "تدريب مدرّبين: إطفاء الحرائق وحماية الأحراج وشبكات السلامة"
-      },
-      {
-        "en": "Training of trainers: managing associations, accountability and organization",
-        "ar": "تدريب مدرّبين: إدارة الجمعيات والمساءلة والتنظيم"
-      },
-      {
-        "en": "Agricultural nurseries, green fodder and organic fertilizers",
-        "ar": "مشاتل زراعية وأعلاف خضراء وأسمدة عضوية"
-      },
-      {
-        "en": "Examinations and PCR tests in family care clinics: Beirut (Basta), Mount Lebanon (Laylaki), South (Aba)",
-        "ar": "فحوصات واختبارات PCR في عيادات الرعاية الأسرية: بيروت (البسطة)، جبل لبنان (الليلكي)، الجنوب (عبا)"
-      }
-    ],
-    "bank_heading": {
-      "en": "Bank transfer",
-      "ar": "التحويل المصرفي"
-    },
-    "bank": [
-      {
-        "label": {
-          "en": "Bank",
-          "ar": "المصرف"
-        },
-        "value": "BYBLOS BANK",
-        "copy": true
-      },
-      {
-        "label": {
-          "en": "Branch",
-          "ar": "الفرع"
-        },
-        "value": "BINT JBEIL BRANCH",
-        "copy": true
-      },
-      {
-        "label": {
-          "en": "Country",
-          "ar": "البلد"
-        },
-        "value": "LEBANON",
-        "copy": true
-      },
-      {
-        "label": {
-          "en": "SWIFT",
-          "ar": "SWIFT"
-        },
-        "value": "BYBALBBX",
-        "copy": true
-      },
-      {
-        "label": {
-          "en": "Beneficiary",
-          "ar": "المستفيد"
-        },
-        "value": "HUMAN'S DUTY",
-        "copy": true
-      },
-      {
-        "label": {
-          "en": "Account no.",
-          "ar": "رقم الحساب"
-        },
-        "value": "4802263380003",
-        "copy": true
-      },
-      {
-        "label": {
-          "en": "IBAN",
-          "ar": "IBAN"
-        },
-        "value": "LB900039000000048022633800",
-        "copy": true
-      },
-      {
-        "label": {
-          "en": "Currency",
-          "ar": "العملة"
-        },
-        "value": "USD",
-        "copy": true
-      },
-      {
-        "label": {
-          "en": "Tel",
-          "ar": "هاتف"
-        },
-        "value": "+961 7 450 601",
-        "copy": false
-      },
-      {
-        "label": {
-          "en": "Fax",
-          "ar": "فاكس"
-        },
-        "value": "+961 7 450 604",
-        "copy": false
-      }
-    ]
-  },
-  "contact": {
-    "heading": {
-      "en": "Contact us",
-      "ar": "تواصلوا معنا"
-    },
-    "phones": [
-      "+961 70 113 081",
-      "+961 1 274 172"
-    ],
-    "emails": [
-      "humansduty@gmail.com",
-      "info@humansduty.org"
-    ],
-    "addresses": [
-      {
-        "en": "Bint Jbeil, Saf El Hawa, Lebanon",
-        "ar": "بنت جبيل، صف الهوا، لبنان"
-      },
-      {
-        "en": "Beirut, Ain El Remmaneh",
-        "ar": "بيروت، عين الرمانة"
-      }
-    ]
-  }
 }

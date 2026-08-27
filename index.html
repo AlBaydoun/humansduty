@@ -46,6 +46,7 @@
   <nav class="nav-links" aria-label="Main">
     <a href="#story" data-t="ui.nav_story">Our story</a>
     <a href="#pillars" data-t="ui.nav_work">What we do</a>
+    <a href="#center" data-t="ui.nav_center">The center</a>
     <a href="#projects" data-t="ui.nav_projects">Projects</a>
     <a href="#contact" data-t="ui.nav_contact">Contact us</a>
   </nav>
@@ -134,6 +135,40 @@
   </div>
 </section>
 
+<!-- ─── 4b · THE CENTER: BEFORE / AFTER ─── -->
+<section class="ctr" id="center" aria-labelledby="ctrHead">
+  <div class="ctr-wrap">
+    <p class="ctr-eyebrow mono" data-t="center.eyebrow">Bint Jbeil, Saf El Hawa</p>
+    <h2 class="ctr-head sec-title" id="ctrHead" data-t="center.heading">Bricks may fall, but knowledge stands tall.</h2>
+    <p class="ctr-body" data-t="center.body"></p>
+
+    <div class="ctr-tabs" id="ctrTabs" role="tablist" aria-label="Viewpoint"></div>
+
+    <figure class="cmp" id="cmp">
+      <div class="cmp-stage" id="cmpStage">
+        <img class="cmp-img cmp-before" id="cmpBefore" alt="" draggable="false">
+        <div class="cmp-after-wrap" id="cmpAfterWrap">
+          <img class="cmp-img cmp-after" id="cmpAfter" alt="" draggable="false">
+        </div>
+        <span class="cmp-tag cmp-tag-b" id="cmpTagB">Before</span>
+        <span class="cmp-tag cmp-tag-a" id="cmpTagA">After</span>
+        <div class="cmp-handle" id="cmpHandle" role="slider" tabindex="0"
+             aria-label="Reveal the destruction" aria-valuemin="0" aria-valuemax="100" aria-valuenow="55">
+          <span class="cmp-line"></span>
+          <span class="cmp-grip"><i></i><i></i></span>
+        </div>
+        <span class="cmp-hint" id="cmpHint" data-t="center.hint">Drag to reveal</span>
+      </div>
+      <figcaption class="cmp-note" id="cmpNote"></figcaption>
+    </figure>
+
+    <div class="ctr-rebuild" id="ctrRebuild">
+      <img id="ctrRebuildImg" alt="" loading="lazy">
+      <p id="ctrRebuildCap"></p>
+    </div>
+  </div>
+</section>
+
 <!-- ─── 5 · PILLARS ─── -->
 <section class="pillars" id="pillars">
   <h2 class="sec-title" data-t="pillars_heading">What we do</h2>
@@ -153,6 +188,12 @@
 <section class="gallery" id="gallery">
   <h2 class="sec-title" data-t="gallery_heading">Moments from the field</h2>
   <div class="mas" id="mas"></div>
+</section>
+
+<!-- ─── 7b · FILMS ─── -->
+<section class="films" id="films">
+  <h2 class="sec-title" data-t="videos_heading">Watch our work</h2>
+  <div class="film-grid" id="filmGrid"></div>
 </section>
 
 <!-- ─── 8 · DONATION ─── -->

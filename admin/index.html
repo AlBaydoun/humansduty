@@ -36,6 +36,8 @@
       <button data-tab="texts" class="on">Site texts</button>
       <button data-tab="timeline">Timeline</button>
       <button data-tab="projects">Projects</button>
+      <button data-tab="center">Before / After</button>
+      <button data-tab="videos">Videos</button>
       <button data-tab="gallery">Gallery</button>
       <button data-tab="photos">About photos</button>
       <button data-tab="bank">Bank</button>
@@ -50,6 +52,8 @@
     <section class="pane on" data-pane="texts" id="paneTexts"></section>
     <section class="pane" data-pane="timeline"><div class="list" id="listTimeline"></div><button class="btn add" data-add="timeline">+ Add year</button></section>
     <section class="pane" data-pane="projects"><div class="list" id="listProjects"></div><button class="btn add" data-add="projects">+ Add project</button></section>
+    <section class="pane" data-pane="center" id="paneCenter"></section>
+    <section class="pane" data-pane="videos"><p class="pane-hint">YouTube videos shown in the "Watch our work" section. Paste a YouTube link or the 11-character video ID.</p><div class="list" id="listVideos"></div><button class="btn add" data-add="videos">+ Add video</button></section>
     <section class="pane" data-pane="gallery">
       <div class="drop" id="drop">Drop photos here or <label class="linklike">browse<input type="file" id="galFiles" accept="image/*" multiple hidden></label><span class="drop-note">Photos are resized automatically before upload</span></div>
       <div class="gal-grid" id="galGrid"></div>
