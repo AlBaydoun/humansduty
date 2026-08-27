@@ -216,12 +216,12 @@ function buildDynamic() {
     fg.innerHTML = "";
     (C.videos || []).forEach(v => {
       const btn = document.createElement("button");
-      btn.className = "film"; btn.type = "button";
+      btn.className = "vid"; btn.type = "button";
       btn.setAttribute("aria-label", (v.title?.[LANG] || "") + " — " + UI[LANG].play);
       const poster = v.thumb || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
-      btn.innerHTML = `<img src="${poster}" alt="" loading="lazy" onerror="this.closest('.film').classList.add('noimg');this.remove()">
-        <span class="film-play"><span></span></span>
-        <span class="film-cap">${v.title?.[LANG] || ""}</span>`;
+      btn.innerHTML = `<img src="${poster}" alt="" loading="lazy" onerror="this.closest('.vid').classList.add('noimg');this.remove()">
+        <span class="vid-play"><span></span></span>
+        <span class="vid-cap">${v.title?.[LANG] || ""}</span>`;
       btn.addEventListener("click", () => {
         btn.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0" title="${(v.title?.[LANG] || "").replace(/"/g, "&quot;")}" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>`;
       }, { once: true });
